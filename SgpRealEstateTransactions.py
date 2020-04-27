@@ -22,7 +22,6 @@ for i in range(1,5) :
     URL_privateResidenceTransaction = 'https://www.ura.gov.sg/uraDataService/invokeUraDS?service=PMI_Resi_Transaction&batch=' + str(i)
     Response_transaction = requests.get(URL_privateResidenceTransaction, headers={'AccessKey':myAccessKey, 'token':mytoken})
     Response_transaction = Response_transaction.text
-
     transactions = json.loads(Response_transaction)
     transactions = transactions['Result']
 

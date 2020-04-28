@@ -27,9 +27,7 @@ for i in range(1,2000) :
 
     listings = listings[1:]
     for listing in listings[:] :
-        # print(listing)
         m = re.search('<span class="notranslate">(.*?)</span>.*<div class="listingDetailPrice">(.*?)</div>.*<div class="listingDetailType">(.*?)</div>.*<div class="listingDetailValues">(.*?)</div>.*<input class="mobile-number-full" hidden="" value="(\d+)" ?/>.*<div class="listingDetailAgentAgencyText ">(.*?)</div>', listing)
-        # m = re.search('data-premium=(.*)', listing)
         try:
             condoName = m.group(1).strip()
         except Exception as e:
@@ -68,7 +66,5 @@ for i in range(1,2000) :
         temp_df = pd.DataFrame.from_dict(dictionary)
         PropAdDf = PropAdDf.append(temp_df)
 
-
 PropAdDf = PropAdDf.set_index('CondoName')
 PropAdDf.to_excel(outputDir + '\\' + outputFileName )
-

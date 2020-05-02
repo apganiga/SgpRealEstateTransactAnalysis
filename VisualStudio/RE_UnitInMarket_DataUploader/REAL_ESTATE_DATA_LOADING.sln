@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "RE_UnitInMarket_DataUploader", "RE_UnitInMarket_DataUploader\RE_UnitInMarket_DataUploader.dtproj", "{A34F1415-B5BD-4F4E-9A64-49A08518DFE1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A34F1415-B5BD-4F4E-9A64-49A08518DFE1}.Development|Default.ActiveCfg = Development
+		{A34F1415-B5BD-4F4E-9A64-49A08518DFE1}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF62EAD3-8E7F-4E0B-87D3-A3B5C39CB8D3}
+	EndGlobalSection
+EndGlobal

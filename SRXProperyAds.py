@@ -4,11 +4,14 @@ import re
 import pandas as pd
 import sys
 from datetime import datetime
+import ascii
 
+asciiList = ascii.charlist()
 PropAdDf = pd.DataFrame(columns=['CondoName', 'Price', 'Type', 'Tenure', 'TOP', 'Area', 'PSF', 'AgentsNumber' ])
 outputDir = 'I:\\REAL_ESTATE_DATA\\UNITS_FOR_SALE'
-outputFileName = 'UnitsInMarket_'+ datetime.today().strftime('%d_%m_%Y')  + '.xlsx'
-for i in range(1,2000) :
+# outputFileName = 'UnitsInMarket_'+ datetime.today().strftime('%d_%m_%Y')  + '.xlsx'
+outputFileName = 'UnitsInMarket_'+ datetime.today().strftime('%d_%m_%Y')  + '.csv'
+for i in range(1,5) :
     print("Scraping Web Page:", i)
     URL = 'https://www.srx.com.sg/search/sale/condo?page=' + str(i)
     try:
@@ -67,4 +70,5 @@ for i in range(1,2000) :
         PropAdDf = PropAdDf.append(temp_df)
 
 PropAdDf = PropAdDf.set_index('CondoName')
-PropAdDf.to_excel(outputDir + '\\' + outputFileName )
+# PropAdDf.to_excel(outputDir + '\\' + outputFileName )
+PropAdDf.to_csv(outputDir + '\\' + outputFileName )

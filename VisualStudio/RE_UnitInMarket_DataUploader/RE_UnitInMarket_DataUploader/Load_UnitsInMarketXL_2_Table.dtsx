@@ -1,0 +1,1732 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/2/2020 6:58:36 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ANANTHIDEAPAD"
+  DTS:CreatorName="ANANTHIDEAPAD\User"
+  DTS:DTSID="{0932D91E-5E6B-44E3-8C40-7B803E63E01F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.94"
+  DTS:LocaleID="18441"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{DE612015-21ED-4779-87F1-2B229B199989}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[connMgr_CsvFile_UnitsInMarket]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="Daily Extracted Units In Market csv file"
+      DTS:DTSID="{B626EEBF-FCBA-4B95-82D7-D45F96495C6C}"
+      DTS:ObjectName="connMgr_CsvFile_UnitsInMarket">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="18441"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="I:\REAL_ESTATE_DATA\UNITS_FOR_SALE\UnitsInMarket_02_05_2020.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CondoName"
+              DTS:DTSID="{F97CC7A5-C43B-4488-9EF8-D045D5217FAC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Price"
+              DTS:DTSID="{E98BEC2E-2BE6-4B91-B10E-FE1B5912A54A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Type"
+              DTS:DTSID="{62DDDCF5-FA08-4D3B-8F79-1C9D4A68D7D1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tenure"
+              DTS:DTSID="{5FA9D972-B287-4F99-B767-56805F311AB1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TOP"
+              DTS:DTSID="{4446417D-D882-4F40-90F5-009720B4BB43}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Area"
+              DTS:DTSID="{BEED371D-657C-48F0-B3BC-646816BB14A0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PSF"
+              DTS:DTSID="{F70497FB-CCA9-4317-A392-E40771850283}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AgentsNumber"
+              DTS:DTSID="{38B01303-2830-444F-9EF1-783BE75AA3A6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PageNo"
+              DTS:DTSID="{460D79AB-7232-4C70-A6B8-242A0D254746}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Source"
+              DTS:DTSID="{7BE3AAFD-AB94-47B8-B88C-3D00BFBBA0F4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AgentsComment"
+              DTS:DTSID="{30DC4D46-027E-497C-99D4-8FD1489236BE}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{20AF6D03-2C9C-4823-90A6-311FDFBC11D8}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="18441"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="I:\REAL_ESTATE_DATA\UNITS_FOR_SALE\ERROR.out.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CondoName"
+              DTS:DTSID="{11101B71-337B-4474-B0C5-800A02B5F644}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Price"
+              DTS:DTSID="{EBCD7A85-F980-462E-8A02-289D49495D95}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Type"
+              DTS:DTSID="{03F77A2F-95CA-470F-BE85-D4BA6A759BAA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tenure"
+              DTS:DTSID="{44967294-373A-4DA6-ABD4-8BDB4A2F7408}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TOP"
+              DTS:DTSID="{368B321E-42F9-4471-AE81-44BFD6EF1678}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Area"
+              DTS:DTSID="{80C19FE3-BBC5-47BB-A6A0-D805081C7B84}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PSF"
+              DTS:DTSID="{388FDA25-A1E8-45F1-895C-F246FA1BDCE6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AgentsNumber"
+              DTS:DTSID="{F96B17FE-018D-4F4A-9BB8-68291F8DF10E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PageNo"
+              DTS:DTSID="{34403B5A-F7ED-4DE3-958A-84158AA0158A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Source"
+              DTS:DTSID="{3EBA18E5-6F74-4389-851D-E1CBACC2B811}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AgentsComment"
+              DTS:DTSID="{6B73E6C6-6013-436E-860E-CAF2738789E9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{B81859C4-668A-460F-AD92-FD887A754F75}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{569CA8A6-D2F1-4F9B-8666-67961C18F1C7}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\LOAD STG_UNITS_IN_MARKET"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{2BEDE054-3203-410E-A6E7-1DB71797D575}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="LOAD STG_UNITS_IN_MARKET"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Inputs[Data Conversion Input].Columns[CondoName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CondoName"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[CondoName]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Inputs[Data Conversion Input].Columns[Price]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Price"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Price]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Inputs[Data Conversion Input].Columns[Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Type"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Type]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Inputs[Data Conversion Input].Columns[Tenure]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Tenure"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Tenure]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Inputs[Data Conversion Input].Columns[TOP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TOP"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[TOP]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Inputs[Data Conversion Input].Columns[Area]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Area"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Area]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Inputs[Data Conversion Input].Columns[PSF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PSF"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[PSF]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Inputs[Data Conversion Input].Columns[AgentsNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AgentsNumber"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[AgentsNumber]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Inputs[Data Conversion Input].Columns[PageNo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PageNo"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[PageNo]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Inputs[Data Conversion Input].Columns[Source]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Source"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Source]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Inputs[Data Conversion Input].Columns[AgentsComment]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AgentsComment"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[AgentsComment]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_CondoName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="50"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_CondoName]"
+                      name="o_CondoName"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[CondoName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_Price]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="50"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_Price]"
+                      name="o_Price"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Price]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="50"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_Type]"
+                      name="o_Type"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Type]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_Tenure]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="50"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_Tenure]"
+                      name="o_Tenure"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Tenure]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_TOP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="50"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_TOP]"
+                      name="o_TOP"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[TOP]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_Area]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="50"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_Area]"
+                      name="o_Area"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Area]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_PSF]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="50"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_PSF]"
+                      name="o_PSF"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[PSF]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_AgentsNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="50"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_AgentsNumber]"
+                      name="o_AgentsNumber"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[AgentsNumber]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_PageNo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="50"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_PageNo]"
+                      name="o_PageNo"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[PageNo]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_Source]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="50"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_Source]"
+                      name="o_Source"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Source]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_AgentsComment]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="5000"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_AgentsComment]"
+                      name="o_AgentsComment"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[AgentsComment]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="18441"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].Columns[CondoName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CondoName"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CondoName]"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[CondoName]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].Columns[Price]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Price"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Price]"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Price]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].Columns[Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Type"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Type]"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Type]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].Columns[Tenure]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Tenure"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Tenure]"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Tenure]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].Columns[TOP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TOP"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[TOP]"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[TOP]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].Columns[Area]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Area"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Area]"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Area]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].Columns[PSF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PSF"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PSF]"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[PSF]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].Columns[AgentsNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AgentsNumber"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AgentsNumber]"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[AgentsNumber]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].Columns[PageNo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PageNo"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PageNo]"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[PageNo]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].Columns[Source]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Source"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Source]"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Source]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].Columns[AgentsComment]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AgentsComment"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AgentsComment]"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[AgentsComment]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CondoName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CondoName" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Price]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Price" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Type" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Tenure]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Tenure" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[TOP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TOP" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Area]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Area" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PSF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PSF" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AgentsNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AgentsNumber" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PageNo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PageNo" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Source]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Source" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AgentsComment]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AgentsComment" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="18441"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[connMgr_CsvFile_UnitsInMarket]"
+                  connectionManagerRefId="Package.ConnectionManagers[connMgr_CsvFile_UnitsInMarket]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[CondoName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CondoName]"
+                      length="50"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[CondoName]"
+                      name="CondoName"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Price]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Price]"
+                      length="50"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Price]"
+                      name="Price"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Type]"
+                      length="50"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Type]"
+                      name="Type"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Tenure]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Tenure]"
+                      length="50"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Tenure]"
+                      name="Tenure"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[TOP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TOP]"
+                      length="50"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[TOP]"
+                      name="TOP"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Area]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Area]"
+                      length="50"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Area]"
+                      name="Area"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[PSF]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PSF]"
+                      length="50"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[PSF]"
+                      name="PSF"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[AgentsNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AgentsNumber]"
+                      length="50"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[AgentsNumber]"
+                      name="AgentsNumber"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[PageNo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PageNo]"
+                      length="50"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[PageNo]"
+                      name="PageNo"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Source]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Source]"
+                      length="50"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[Source]"
+                      name="Source"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[AgentsComment]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AgentsComment]"
+                      length="50"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].Columns[AgentsComment]"
+                      name="AgentsComment"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CondoName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CondoName" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Price]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Price" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Type" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Tenure]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Tenure" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TOP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TOP" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Area]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Area" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PSF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PSF" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AgentsNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AgentsNumber" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PageNo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PageNo" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Source]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Source" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AgentsComment]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AgentsComment" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stg].[STG_UNIT_IN_MARKET]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{067FF5F3-0315-4054-9486-1DB9BE7B7298}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.REAL_ESTATE]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[o_CondoName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="o_CondoName"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CONDO_NAME]"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_CondoName]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[o_Price]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="o_Price"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRICE]"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_Price]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[o_Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="o_Type"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TYPE]"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_Type]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[o_Tenure]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="o_Tenure"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TENURE]"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_Tenure]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[o_TOP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="o_TOP"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TOP_]"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_TOP]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[o_Area]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="o_Area"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AREA]"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_Area]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[o_PSF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="o_PSF"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PSF]"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_PSF]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[o_AgentsNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="o_AgentsNumber"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGENT_NUMBER]"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_AgentsNumber]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[o_PageNo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="o_PageNo"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PAGE_NO]"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_PageNo]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[o_Source]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="o_Source"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE]"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_Source]" />
+                    <inputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[o_AgentsComment]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5000"
+                      cachedName="o_AgentsComment"
+                      externalMetadataColumnId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGENT_COMMENT]"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_AgentsComment]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CONDO_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CONDO_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRICE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="PRICE" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TENURE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="TENURE" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TOP_]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="TOP_" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AREA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="AREA" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PSF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="PSF" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGENT_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="AGENT_NUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PAGE_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="PAGE_NO" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="SOURCE" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGENT_COMMENT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5000"
+                      name="AGENT_COMMENT" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\LOAD STG_UNITS_IN_MARKET.Paths[Data Conversion Error Output]"
+              endId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="Data Conversion Error Output"
+              startId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Error Output]" />
+            <path
+              refId="Package\LOAD STG_UNITS_IN_MARKET.Paths[Data Conversion Output]"
+              endId="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\LOAD STG_UNITS_IN_MARKET.Paths[Flat File Source Output]"
+              endId="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TRUNCATE STG_UNIT_IN_MARKET"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Empty the Staging Table"
+      DTS:DTSID="{D4CE3A03-6C55-490C-BD38-5470AD96C11B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRUNCATE STG_UNIT_IN_MARKET"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{067FF5F3-0315-4054-9486-1DB9BE7B7298}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="DELETE FROM  [stg].[STG_UNIT_IN_MARKET]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{0032FF13-EFF7-44C2-BF53-8248939265D1}"
+      DTS:From="Package\TRUNCATE STG_UNIT_IN_MARKET"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\LOAD STG_UNITS_IN_MARKET" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="158.4,63.2"
+          Id="Package\LOAD STG_UNITS_IN_MARKET"
+          TopLeft="55.99999777476,123.413334314134" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\TRUNCATE STG_UNIT_IN_MARKET"
+          TopLeft="55.99999777476,31.8933335867988" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="136.79999777476,73.4933335867988">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.9200007273357"
+              Start="0,0"
+              End="0,42.4200007273357">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.4200007273357" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\LOAD STG_UNITS_IN_MARKET">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\LOAD STG_UNITS_IN_MARKET\Flat File Source"
+          TopLeft="221.333324538337,1.38666667768692" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination"
+          TopLeft="85.3333299424914,187.200001487732" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\LOAD STG_UNITS_IN_MARKET\Data Conversion"
+          TopLeft="89.3333297835458,107.093334165361" />
+        <EdgeLayout
+          Id="Package\LOAD STG_UNITS_IN_MARKET.Paths[Flat File Source Output]"
+          TopLeft="296.933324538337,42.9866666776869">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-129.599994754791,64.1066674876743"
+              Start="0,0"
+              End="-129.599994754791,56.6066674876743">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.0533337438372" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.0533337438372"
+                    Point2="0,32.0533337438372"
+                    Point3="-4,32.0533337438372" />
+                  <mssgle:LineSegment
+                    End="-125.599994754791,32.0533337438372" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-125.599994754791,32.0533337438372"
+                    Point2="-129.599994754791,32.0533337438372"
+                    Point3="-129.599994754791,36.0533337438372" />
+                  <mssgle:LineSegment
+                    End="-129.599994754791,56.6066674876743" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\LOAD STG_UNITS_IN_MARKET.Paths[Data Conversion Output]"
+          TopLeft="169.133329863019,148.693334165361">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.5066673223707"
+              Start="0,0"
+              End="0,31.0066673223707">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.0066673223707" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\LOAD STG_UNITS_IN_MARKET\Flat File Destination"
+          TopLeft="501.333313412137,55.4666671074761" />
+        <EdgeLayout
+          Id="Package\LOAD STG_UNITS_IN_MARKET.Paths[Data Conversion Error Output]"
+          TopLeft="245.333329783546,127.893334165361">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="255.999983628592,-51.6266670578851"
+              Start="0,0"
+              End="248.499983628592,-51.6266670578851">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="123.999991814296,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="123.999991814296,0"
+                    Point2="127.999991814296,0"
+                    Point3="127.999991814296,-4" />
+                  <mssgle:LineSegment
+                    End="127.999991814296,-47.6266670578851" />
+                  <mssgle:CubicBezierSegment
+                    Point1="127.999991814296,-47.6266670578851"
+                    Point2="127.999991814296,-51.6266670578851"
+                    Point3="131.999991814296,-51.6266670578851" />
+                  <mssgle:LineSegment
+                    End="248.499983628592,-51.6266670578851" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="61.9136050955458,1,132.1727734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\LOAD STG_UNITS_IN_MARKET\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

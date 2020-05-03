@@ -2,13 +2,13 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>RE_UnitInMarket_DataUploader</Name>
-    <LastWriteTime>2020-05-03T02:40:01.6618535Z</LastWriteTime>
+    <LastWriteTime>2020-05-03T08:29:29.1238663Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>Load_UnitsInMarketXL_2_Table.dtsx</Name>
-      <LastWriteTime>2020-05-03T03:09:33.4152928Z</LastWriteTime>
+      <LastWriteTime>2020-05-03T10:43:11.0876881Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

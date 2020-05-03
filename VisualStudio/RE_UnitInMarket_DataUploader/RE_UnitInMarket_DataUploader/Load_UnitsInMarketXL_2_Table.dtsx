@@ -11,8 +11,8 @@
   DTS:LocaleID="18441"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="56"
-  DTS:VersionGUID="{995BBC84-F918-492B-B36A-2A3765B9E64A}">
+  DTS:VersionBuild="58"
+  DTS:VersionGUID="{C77EC5A1-6CA0-4447-9A1F-AA00E9FB4C0D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -424,10 +424,9 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_PRICE]"
-                      dataType="wstr"
+                      dataType="cy"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="100"
                       lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_PRICE]"
                       name="o_cln_PRICE"
                       truncationRowDisposition="FailComponent">
@@ -511,10 +510,9 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_AREA]"
-                      dataType="wstr"
+                      dataType="i2"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="100"
                       lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_AREA]"
                       name="o_cln_AREA"
                       truncationRowDisposition="FailComponent">
@@ -532,10 +530,9 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_PSF]"
-                      dataType="wstr"
+                      dataType="i2"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="100"
                       lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_PSF]"
                       name="o_cln_PSF"
                       truncationRowDisposition="FailComponent">
@@ -875,11 +872,159 @@
               </outputs>
             </component>
             <component
-              refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination"
+              refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 1.Outputs[Derived Column Output].Columns[DATE_IT_CHANGED]"
+                      dataType="dbDate"
+                      description="DATE_IT_CHANGED"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 1.Outputs[Derived Column Output].Columns[DATE_IT_CHANGED]"
+                      name="DATE_IT_CHANGED"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBDATE)(@[System::CreationDate])</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBDATE)(@[System::CreationDate])</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 2"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 2"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 2.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 2.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 2.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 2.Outputs[Derived Column Output].Columns[DATE_CAPTURED]"
+                      dataType="dbDate"
+                      description="DATE_CAPTURED"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 2.Outputs[Derived Column Output].Columns[DATE_CAPTURED]"
+                      name="DATE_CAPTURED"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBDATE)(@[System::CreationDate])</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBDATE)(@[System::CreationDate])</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 2.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 2.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="OLE DB Destination"
+              name="Insert Destination"
               usesDispositions="true"
               version="4">
               <properties>
@@ -912,7 +1057,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">3</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -924,7 +1069,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                  name="FastLoadOptions"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -932,200 +1077,687 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{067FF5F3-0315-4054-9486-1DB9BE7B7298}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.REAL_ESTATE]"
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.REAL_ESTATE 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.REAL_ESTATE 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
-                  errorRowDisposition="IgnoreFailure"
+                  errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[o_CONDO_NAME]"
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].Columns[CONDO_NAME]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="o_CONDO_NAME"
-                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CONDO_NAME]"
-                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_CONDO_NAME]" />
-                    <inputColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[o_TYPE]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="o_TYPE"
-                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TYPE]"
-                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_TYPE]" />
-                    <inputColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[o_TENURE]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="o_TENURE"
-                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TENURE]"
-                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_TENURE]" />
-                    <inputColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[o_TOP_]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="o_TOP_"
-                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TOP_]"
-                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_TOP_]" />
-                    <inputColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[o_AGENT_NUMBER]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="11"
-                      cachedName="o_AGENT_NUMBER"
-                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGENT_NUMBER]"
-                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_AGENT_NUMBER]" />
-                    <inputColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[o_PAGE_NO]"
-                      cachedDataType="ui1"
-                      cachedName="o_PAGE_NO"
-                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PAGE_NO]"
-                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_PAGE_NO]" />
-                    <inputColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[o_SOURCE]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="o_SOURCE"
-                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE]"
-                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_SOURCE]" />
-                    <inputColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[o_AGENT_COMMENT]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="500"
-                      cachedName="o_AGENT_COMMENT"
-                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGENT_COMMENT]"
-                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_AGENT_COMMENT]" />
-                    <inputColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[o_cln_AREA]"
-                      cachedDataType="wstr"
                       cachedLength="100"
-                      cachedName="o_cln_AREA"
-                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AREA]"
-                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_AREA]" />
+                      cachedName="CONDO_NAME"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CONDO_NAME]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[CONDO_NAME]" />
                     <inputColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[o_cln_PSF]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="o_cln_PSF"
-                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PSF]"
-                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_PSF]" />
-                    <inputColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[o_cln_PRICE]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].Columns[o_cln_PRICE]"
+                      cachedDataType="cy"
                       cachedName="o_cln_PRICE"
-                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRICE]"
-                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_PRICE]" />
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRICE]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_cln_PRICE]" />
                     <inputColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[o_n_DATE]"
-                      cachedDataType="date"
-                      cachedName="o_n_DATE"
-                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DATE_CAPTURED]"
-                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_n_DATE]" />
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].Columns[TYPE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TYPE"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[TYPE]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[TYPE]" />
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].Columns[TENURE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TENURE"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[TENURE]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[TENURE]" />
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].Columns[TOP_]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TOP_"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[TOP_]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[TOP_]" />
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].Columns[o_cln_AREA]"
+                      cachedDataType="i2"
+                      cachedName="o_cln_AREA"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[AREA]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_cln_AREA]" />
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].Columns[o_cln_PSF]"
+                      cachedDataType="i2"
+                      cachedName="o_cln_PSF"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[PSF]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_cln_PSF]" />
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].Columns[AGENT_NUMBER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="AGENT_NUMBER"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGENT_NUMBER]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[AGENT_NUMBER]" />
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].Columns[SOURCE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="SOURCE"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[SOURCE]" />
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].Columns[AGENT_COMMENT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5000"
+                      cachedName="AGENT_COMMENT"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGENT_COMMENT]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[AGENT_COMMENT]" />
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].Columns[DATE_CAPTURED]"
+                      cachedDataType="dbDate"
+                      cachedName="DATE_CAPTURED"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[DATE_CAPTURED]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 2.Outputs[Derived Column Output].Columns[DATE_CAPTURED]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AD_ID]"
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[AD_ID]"
                       dataType="guid"
                       name="AD_ID" />
                     <externalMetadataColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CONDO_NAME]"
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CONDO_NAME]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="CONDO_NAME" />
                     <externalMetadataColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRICE]"
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRICE]"
                       dataType="cy"
                       name="PRICE" />
                     <externalMetadataColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TYPE]"
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[TYPE]"
                       codePage="1252"
                       dataType="str"
                       length="20"
                       name="TYPE" />
                     <externalMetadataColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TENURE]"
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[TENURE]"
                       codePage="1252"
                       dataType="str"
                       length="20"
                       name="TENURE" />
                     <externalMetadataColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TOP_]"
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[TOP_]"
                       codePage="1252"
                       dataType="str"
                       length="20"
                       name="TOP_" />
                     <externalMetadataColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AREA]"
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[AREA]"
                       dataType="i2"
                       name="AREA" />
                     <externalMetadataColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PSF]"
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[PSF]"
                       dataType="i2"
                       name="PSF" />
                     <externalMetadataColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGENT_NUMBER]"
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGENT_NUMBER]"
                       codePage="1252"
                       dataType="str"
                       length="11"
                       name="AGENT_NUMBER" />
                     <externalMetadataColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PAGE_NO]"
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[PAGE_NO]"
                       dataType="i2"
                       name="PAGE_NO" />
                     <externalMetadataColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE]"
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE]"
                       codePage="1252"
                       dataType="str"
                       length="20"
                       name="SOURCE" />
                     <externalMetadataColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGENT_COMMENT]"
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGENT_COMMENT]"
                       codePage="1252"
                       dataType="str"
                       length="500"
                       name="AGENT_COMMENT" />
                     <externalMetadataColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DATE_CAPTURED]"
-                      dataType="bytes"
-                      length="8"
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[DATE_CAPTURED]"
+                      dataType="dbDate"
                       name="DATE_CAPTURED" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[DATE_IT_CHANGED]"
+                      dataType="dbDate"
+                      name="DATE_IT_CHANGED" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[UNIT_IN_MARKET] SET [DATE_IT_CHANGED] = ? WHERE [AREA] = ? AND [CONDO_NAME] = ? AND [SOURCE] = ? AND [TENURE] = ? AND [TOP_] = ? AND [TYPE] = ? AND [DATE_IT_CHANGED] IS NULL</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.REAL_ESTATE 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.REAL_ESTATE 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input].Columns[o_cln_AREA]"
+                      cachedDataType="i2"
+                      cachedName="o_cln_AREA"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_AREA]" />
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input].Columns[CONDO_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="CONDO_NAME"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONDO_NAME]" />
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input].Columns[SOURCE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="SOURCE"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE]" />
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input].Columns[TENURE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TENURE"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[TENURE]" />
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input].Columns[TOP_]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TOP_"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOP_]" />
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input].Columns[TYPE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TYPE"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[TYPE]" />
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input].Columns[DATE_IT_CHANGED]"
+                      cachedDataType="dbDate"
+                      cachedName="DATE_IT_CHANGED"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 1.Outputs[Derived Column Output].Columns[DATE_IT_CHANGED]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="dbDate"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i2"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command 1"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[UNIT_IN_MARKET] SET [AGENT_COMMENT] = ?,[AGENT_NUMBER] = ?,[PRICE] = ?,[PSF] = ? WHERE [AREA] = ? AND [CONDO_NAME] = ? AND [SOURCE] = ? AND [TENURE] = ? AND [TOP_] = ? AND [TYPE] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.REAL_ESTATE 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.REAL_ESTATE 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[AGENT_COMMENT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5000"
+                      cachedName="AGENT_COMMENT"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[AGENT_COMMENT]" />
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[AGENT_NUMBER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="AGENT_NUMBER"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[AGENT_NUMBER]" />
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[o_cln_AREA]"
+                      cachedDataType="i2"
+                      cachedName="o_cln_AREA"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_AREA]" />
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CONDO_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="CONDO_NAME"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONDO_NAME]" />
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[o_cln_PRICE]"
+                      cachedDataType="cy"
+                      cachedName="o_cln_PRICE"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_PRICE]" />
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[o_cln_PSF]"
+                      cachedDataType="i2"
+                      cachedName="o_cln_PSF"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_PSF]" />
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SOURCE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="SOURCE"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE]" />
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[TENURE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TENURE"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[TENURE]" />
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[TOP_]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TOP_"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOP_]" />
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[TYPE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TYPE"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[TYPE]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="11"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="cy"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="i2"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="i2"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Param_8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Param_9">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1485,11 +2117,1308 @@
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [AGENT_COMMENT], [AREA], [CONDO_NAME], [PRICE], [PSF], [SOURCE], [TENURE], [TOP_], [TYPE],[DATE_CAPTURED],[DATE_IT_CHANGED] FROM [dbo].[UNIT_IN_MARKET]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere">[DATE_CAPTURED] IS NOT NULL AND [DATE_IT_CHANGED] IS NULL</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.REAL_ESTATE 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.REAL_ESTATE 1]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[AGENT_COMMENT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5000"
+                      cachedName="AGENT_COMMENT"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[AGENT_COMMENT]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[AGENT_COMMENT]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[o_cln_AREA]"
+                      cachedDataType="i2"
+                      cachedName="o_cln_AREA"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[AREA]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_AREA]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[CONDO_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="CONDO_NAME"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CONDO_NAME]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONDO_NAME]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[o_cln_PRICE]"
+                      cachedDataType="cy"
+                      cachedName="o_cln_PRICE"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[PRICE]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_PRICE]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[o_cln_PSF]"
+                      cachedDataType="i2"
+                      cachedName="o_cln_PSF"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[PSF]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_PSF]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[SOURCE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="SOURCE"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[SOURCE]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[TENURE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TENURE"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[TENURE]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[TENURE]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[TOP_]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TOP_"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[TOP_]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOP_]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[TYPE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TYPE"
+                      externalMetadataColumnId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[TYPE]"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[TYPE]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[AGENT_COMMENT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="AGENT_COMMENT" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[AREA]"
+                      dataType="i2"
+                      name="AREA" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CONDO_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CONDO_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[PRICE]"
+                      dataType="cy"
+                      name="PRICE" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[PSF]"
+                      dataType="i2"
+                      name="PSF" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[SOURCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="SOURCE" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[TENURE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="TENURE" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[TOP_]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="TOP_" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[DATE_CAPTURED]"
+                      dataType="dbDate"
+                      name="DATE_CAPTURED" />
+                    <externalMetadataColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[DATE_IT_CHANGED]"
+                      dataType="dbDate"
+                      name="DATE_IT_CHANGED" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[CONDO_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="CONDO_NAME"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONDO_NAME]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[CONDO_NAME]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[PRICE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="PRICE"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRICE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[PRICE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[TYPE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TYPE"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[TYPE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[TYPE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[TENURE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TENURE"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[TENURE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[TENURE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[TOP_]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TOP_"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOP_]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[TOP_]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[AREA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="AREA"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[AREA]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[AREA]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[PSF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="PSF"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[PSF]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[PSF]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[AGENT_NUMBER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="AGENT_NUMBER"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[AGENT_NUMBER]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[AGENT_NUMBER]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[PAGE_NO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="PAGE_NO"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[PAGE_NO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[PAGE_NO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[SOURCE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="SOURCE"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[SOURCE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[AGENT_COMMENT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5000"
+                      cachedName="AGENT_COMMENT"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[AGENT_COMMENT]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[AGENT_COMMENT]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[cln_AREA]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="cln_AREA"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column.Outputs[Derived Column Output].Columns[cln_AREA]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[cln_AREA]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[cln_PRICE]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="cln_PRICE"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column.Outputs[Derived Column Output].Columns[cln_PRICE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[cln_PRICE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[cln_PSF]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="cln_PSF"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column.Outputs[Derived Column Output].Columns[cln_PSF]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[cln_PSF]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[n_DATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="n_DATE"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column.Outputs[Derived Column Output].Columns[n_DATE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[n_DATE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[o_CONDO_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="o_CONDO_NAME"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_CONDO_NAME]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_CONDO_NAME]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[o_cln_PRICE]"
+                      cachedDataType="cy"
+                      cachedName="o_cln_PRICE"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_PRICE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_cln_PRICE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[o_TYPE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="o_TYPE"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_TYPE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_TYPE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[o_TENURE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="o_TENURE"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_TENURE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_TENURE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[o_TOP_]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="o_TOP_"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_TOP_]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_TOP_]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[o_cln_AREA]"
+                      cachedDataType="i2"
+                      cachedName="o_cln_AREA"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_AREA]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_cln_AREA]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[o_cln_PSF]"
+                      cachedDataType="i2"
+                      cachedName="o_cln_PSF"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_PSF]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_cln_PSF]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[o_AGENT_NUMBER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="11"
+                      cachedName="o_AGENT_NUMBER"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_AGENT_NUMBER]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_AGENT_NUMBER]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[o_PAGE_NO]"
+                      cachedDataType="ui1"
+                      cachedName="o_PAGE_NO"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_PAGE_NO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_PAGE_NO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[o_SOURCE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="o_SOURCE"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_SOURCE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_SOURCE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[o_AGENT_COMMENT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="o_AGENT_COMMENT"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_AGENT_COMMENT]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_AGENT_COMMENT]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1].Columns[o_n_DATE]"
+                      cachedDataType="date"
+                      cachedName="o_n_DATE"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_n_DATE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_n_DATE]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[CONDO_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="CONDO_NAME"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONDO_NAME]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[CONDO_NAME]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[PRICE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="PRICE"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRICE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[PRICE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[TYPE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TYPE"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[TYPE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[TYPE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[TENURE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TENURE"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[TENURE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[TENURE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[TOP_]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TOP_"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOP_]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[TOP_]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[AREA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="AREA"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[AREA]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[AREA]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[PSF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="PSF"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[PSF]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[PSF]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[AGENT_NUMBER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="AGENT_NUMBER"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[AGENT_NUMBER]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[AGENT_NUMBER]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[PAGE_NO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="PAGE_NO"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[PAGE_NO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[PAGE_NO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[SOURCE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="SOURCE"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[SOURCE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[AGENT_COMMENT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5000"
+                      cachedName="AGENT_COMMENT"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output].Columns[AGENT_COMMENT]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[AGENT_COMMENT]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[cln_AREA]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="cln_AREA"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column.Outputs[Derived Column Output].Columns[cln_AREA]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[cln_AREA]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[cln_PRICE]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="cln_PRICE"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column.Outputs[Derived Column Output].Columns[cln_PRICE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[cln_PRICE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[cln_PSF]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="cln_PSF"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column.Outputs[Derived Column Output].Columns[cln_PSF]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[cln_PSF]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[n_DATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="n_DATE"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column.Outputs[Derived Column Output].Columns[n_DATE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[n_DATE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[o_CONDO_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="o_CONDO_NAME"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_CONDO_NAME]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_CONDO_NAME]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[o_cln_PRICE]"
+                      cachedDataType="cy"
+                      cachedName="o_cln_PRICE"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_PRICE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_cln_PRICE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[o_TYPE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="o_TYPE"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_TYPE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_TYPE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[o_TENURE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="o_TENURE"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_TENURE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_TENURE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[o_TOP_]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="o_TOP_"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_TOP_]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_TOP_]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[o_cln_AREA]"
+                      cachedDataType="i2"
+                      cachedName="o_cln_AREA"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_AREA]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_cln_AREA]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[o_cln_PSF]"
+                      cachedDataType="i2"
+                      cachedName="o_cln_PSF"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_PSF]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_cln_PSF]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[o_AGENT_NUMBER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="11"
+                      cachedName="o_AGENT_NUMBER"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_AGENT_NUMBER]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_AGENT_NUMBER]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[o_PAGE_NO]"
+                      cachedDataType="ui1"
+                      cachedName="o_PAGE_NO"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_PAGE_NO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_PAGE_NO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[o_SOURCE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="o_SOURCE"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_SOURCE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_SOURCE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[o_AGENT_COMMENT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="o_AGENT_COMMENT"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_AGENT_COMMENT]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_AGENT_COMMENT]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2].Columns[o_n_DATE]"
+                      cachedDataType="date"
+                      cachedName="o_n_DATE"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output].Columns[o_n_DATE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_n_DATE]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[CONDO_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[CONDO_NAME]"
+                      name="CONDO_NAME" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[PRICE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[PRICE]"
+                      name="PRICE" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[TYPE]"
+                      name="TYPE" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[TENURE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[TENURE]"
+                      name="TENURE" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[TOP_]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[TOP_]"
+                      name="TOP_" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[AREA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[AREA]"
+                      name="AREA" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[PSF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[PSF]"
+                      name="PSF" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[AGENT_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[AGENT_NUMBER]"
+                      name="AGENT_NUMBER" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[PAGE_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[PAGE_NO]"
+                      name="PAGE_NO" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[SOURCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[SOURCE]"
+                      name="SOURCE" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[AGENT_COMMENT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5000"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[AGENT_COMMENT]"
+                      name="AGENT_COMMENT" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[cln_AREA]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[cln_AREA]"
+                      name="cln_AREA" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[cln_PRICE]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[cln_PRICE]"
+                      name="cln_PRICE" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[cln_PSF]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[cln_PSF]"
+                      name="cln_PSF" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[n_DATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[n_DATE]"
+                      name="n_DATE" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_CONDO_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_CONDO_NAME]"
+                      name="o_CONDO_NAME" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_cln_PRICE]"
+                      dataType="cy"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_cln_PRICE]"
+                      name="o_cln_PRICE" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_TYPE]"
+                      name="o_TYPE" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_TENURE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_TENURE]"
+                      name="o_TENURE" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_TOP_]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_TOP_]"
+                      name="o_TOP_" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_cln_AREA]"
+                      dataType="i2"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_cln_AREA]"
+                      name="o_cln_AREA" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_cln_PSF]"
+                      dataType="i2"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_cln_PSF]"
+                      name="o_cln_PSF" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_AGENT_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="11"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_AGENT_NUMBER]"
+                      name="o_AGENT_NUMBER" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_PAGE_NO]"
+                      dataType="ui1"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_PAGE_NO]"
+                      name="o_PAGE_NO" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_SOURCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_SOURCE]"
+                      name="o_SOURCE" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_AGENT_COMMENT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_AGENT_COMMENT]"
+                      name="o_AGENT_COMMENT" />
+                    <outputColumn
+                      refId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_n_DATE]"
+                      dataType="date"
+                      lineageId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1].Columns[o_n_DATE]"
+                      name="o_n_DATE" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
               refId="Package\LOAD to Actual Table UNITS_IN_MARKET.Paths[Data Conversion Output]"
-              endId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
               name="Data Conversion Output"
               startId="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion.Outputs[Data Conversion Output]" />
             <path
@@ -1498,10 +3427,45 @@
               name="Derived Column Output"
               startId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column.Outputs[Derived Column Output]" />
             <path
+              refId="Package\LOAD to Actual Table UNITS_IN_MARKET.Paths[Derived Column Output1]"
+              endId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\LOAD to Actual Table UNITS_IN_MARKET.Paths[Derived Column Output2]"
+              endId="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 2.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\LOAD to Actual Table UNITS_IN_MARKET.Paths[Historical Attribute Inserts Output]"
+              endId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 1.Inputs[Derived Column Input]"
+              name="Historical Attribute Inserts Output"
+              startId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]" />
+            <path
+              refId="Package\LOAD to Actual Table UNITS_IN_MARKET.Paths[Inferred Member Updates Output]"
+              endId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1.Inputs[OLE DB Command Input]"
+              name="Inferred Member Updates Output"
+              startId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]" />
+            <path
+              refId="Package\LOAD to Actual Table UNITS_IN_MARKET.Paths[New Output]"
+              endId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 1]"
+              name="New Output"
+              startId="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\LOAD to Actual Table UNITS_IN_MARKET.Paths[OLE DB Command Output]"
+              endId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Inputs[Union All Input 2]"
+              name="OLE DB Command Output"
+              startId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command.Outputs[OLE DB Command Output]" />
+            <path
               refId="Package\LOAD to Actual Table UNITS_IN_MARKET.Paths[OLE DB Source Output]"
               endId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
               startId="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\LOAD to Actual Table UNITS_IN_MARKET.Paths[Union All Output 1]"
+              endId="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 2.Inputs[Derived Column Input]"
+              name="Union All Output 1"
+              startId="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All.Outputs[Union All Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -2671,7 +4635,7 @@
     design-time-name="Package\LOAD to STG_UNITS_IN_MARKET">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="151.2,41.6"
           Id="Package\LOAD to STG_UNITS_IN_MARKET\Flat File Source"
@@ -2715,9 +4679,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-82.9494114398956,37.0533337438372,36.298828125,9.5732421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2739,9 +4701,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-18.1494140625,10.7167125674354,36.298828125,9.5732421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2764,116 +4724,318 @@
     design-time-name="Package\LOAD to Actual Table UNITS_IN_MARKET">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="152,41.6"
           Id="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Source"
-          TopLeft="54.4,19.2" />
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination"
-          TopLeft="498.4,172" />
+          TopLeft="158.1,5.49999999999995" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column"
-          TopLeft="73.6,103.2" />
+          TopLeft="157.7,107.1" />
         <NodeLayout
           Size="156,41.6"
           Id="Package\LOAD to Actual Table UNITS_IN_MARKET\Data Conversion"
-          TopLeft="280.8,174.4" />
+          TopLeft="156.1,208.7" />
         <EdgeLayout
           Id="Package\LOAD to Actual Table UNITS_IN_MARKET.Paths[OLE DB Source Output]"
-          TopLeft="130.4,60.8">
+          TopLeft="234.1,47.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="19.5999999999999,42.4"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="19.5999999999999,34.9">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.2"
-                    Point2="0,21.2"
-                    Point3="4,21.2" />
-                  <mssgle:LineSegment
-                    End="15.5999999999999,21.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="15.5999999999999,21.2"
-                    Point2="19.5999999999999,21.2"
-                    Point3="19.5999999999999,25.2" />
-                  <mssgle:LineSegment
-                    End="19.5999999999999,34.9" />
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8.34941406250003,26.2,36.298828125,9.5732421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\LOAD to Actual Table UNITS_IN_MARKET.Paths[Derived Column Output]"
-          TopLeft="150,144.8">
+          TopLeft="234.1,148.7">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="208.8,29.6"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="208.8,22.1">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.8"
-                    Point2="0,14.8"
-                    Point3="4,14.8" />
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension"
+          TopLeft="130.1,310.3" />
+        <EdgeLayout
+          Id="Package\LOAD to Actual Table UNITS_IN_MARKET.Paths[Data Conversion Output]"
+          TopLeft="234.1,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="204.8,14.8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="204.8,14.8"
-                    Point2="208.8,14.8"
-                    Point3="208.8,18.8" />
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 1"
+          TopLeft="11.3000000000001,411.9" />
+        <EdgeLayout
+          Id="Package\LOAD to Actual Table UNITS_IN_MARKET.Paths[Historical Attribute Inserts Output]"
+          TopLeft="184.1,351.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-92,59.9999999999999"
+              Start="0,0"
+              End="-92,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="208.8,22.1" />
+                    End="0,16.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.506329113924"
+                    Point2="0,20.506329113924"
+                    Point3="-4,20.506329113924" />
+                  <mssgle:LineSegment
+                    End="-88,20.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-88,20.506329113924"
+                    Point2="-92,20.506329113924"
+                    Point3="-92,24.506329113924" />
+                  <mssgle:LineSegment
+                    End="-92,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="77.51376953125,19.8,53.7724609375,16"
+              BoundingBox="-121.05638671875,25.506329113924,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command"
+          TopLeft="5.50000000000009,513.5" />
+        <EdgeLayout
+          Id="Package\LOAD to Actual Table UNITS_IN_MARKET.Paths[Derived Column Output1]"
+          TopLeft="90.6000000000001,453.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\LOAD to Actual Table UNITS_IN_MARKET\Union All"
+          TopLeft="174.1,615.099999999999" />
+        <EdgeLayout
+          Id="Package\LOAD to Actual Table UNITS_IN_MARKET.Paths[New Output]"
+          TopLeft="234.1,351.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.6666666666667,263.2"
+              Start="0,0"
+              End="18.6666666666667,255.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,151.842105263158" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,151.842105263158"
+                    Point2="0,155.842105263158"
+                    Point3="4,155.842105263158" />
+                  <mssgle:LineSegment
+                    End="14.6666666666667,155.842105263158" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.6666666666667,155.842105263158"
+                    Point2="18.6666666666667,155.842105263158"
+                    Point3="18.6666666666667,159.842105263158" />
+                  <mssgle:LineSegment
+                    End="18.6666666666667,255.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-17.7580533854167,160.842105263158,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\LOAD to Actual Table UNITS_IN_MARKET.Paths[Data Conversion Output]"
-          TopLeft="436.8,194">
+          Id="Package\LOAD to Actual Table UNITS_IN_MARKET.Paths[OLE DB Command Output]"
+          TopLeft="89.1000000000001,555.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="61.5999999999999,0"
+              EndConnector="126.333333333333,59.9999999999999"
               Start="0,0"
-              End="54.0999999999999,0">
+              End="126.333333333333,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="54.0999999999999,0" />
+                    End="0,31.5263157894736" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5263157894736"
+                    Point2="0,35.5263157894736"
+                    Point3="4,35.5263157894736" />
+                  <mssgle:LineSegment
+                    End="122.333333333333,35.5263157894736" />
+                  <mssgle:CubicBezierSegment
+                    Point1="122.333333333333,35.5263157894736"
+                    Point2="126.333333333333,35.5263157894736"
+                    Point3="126.333333333333,39.5263157894736" />
+                  <mssgle:LineSegment
+                    End="126.333333333333,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\LOAD to Actual Table UNITS_IN_MARKET\Derived Column 2"
+          TopLeft="153.3,716.699999999999" />
+        <EdgeLayout
+          Id="Package\LOAD to Actual Table UNITS_IN_MARKET.Paths[Union All Output 1]"
+          TopLeft="234.1,656.699999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="159.2,41.6"
+          Id="Package\LOAD to Actual Table UNITS_IN_MARKET\Insert Destination"
+          TopLeft="154.5,818.299999999999" />
+        <EdgeLayout
+          Id="Package\LOAD to Actual Table UNITS_IN_MARKET.Paths[Derived Column Output2]"
+          TopLeft="234.1,758.299999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Command 1"
+          TopLeft="295.1,411.9" />
+        <EdgeLayout
+          Id="Package\LOAD to Actual Table UNITS_IN_MARKET.Paths[Inferred Member Updates Output]"
+          TopLeft="284.1,351.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="99,59.9999999999999"
+              Start="0,0"
+              End="99,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.506329113924"
+                    Point2="0,20.506329113924"
+                    Point3="4,20.506329113924" />
+                  <mssgle:LineSegment
+                    End="95,20.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="95,20.506329113924"
+                    Point2="99,20.506329113924"
+                    Point3="99,24.506329113924" />
+                  <mssgle:LineSegment
+                    End="99,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0.163769531249955,5,53.7724609375,16"
+              BoundingBox="-24.90298828125,25.506329113924,148.8059765625,11.658203125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2894,15 +5056,97 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\LOAD to Actual Table UNITS_IN_MARKET\OLE DB Destination">
+    design-time-name="Package\LOAD to Actual Table UNITS_IN_MARKET\Slowly Changing Dimension">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
+        <Name>SCDMetadata</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{EC74AAB1-7A27-4705-9C7D-C99FAE53A121}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[UNIT_IN_MARKET]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[AGENT_COMMENT]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;AGENT_COMMENT&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[AGENT_NUMBER]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;AGENT_NUMBER&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_AREA]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;AREA&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[CONDO_NAME]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;CONDO_NAME&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_PRICE]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;PRICE&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[o_cln_PSF]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;PSF&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;SOURCE&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[TENURE]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;TENURE&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[TOP_]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;TOP_&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[TYPE]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;TYPE&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 2&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn&gt;DATE_CAPTURED&lt;/StartDateColumn&gt;
+  &lt;EndDateColumn&gt;DATE_IT_CHANGED&lt;/EndDateColumn&gt;
+  &lt;DateVariable&gt;System::CreationDate&lt;/DateVariable&gt;
+  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

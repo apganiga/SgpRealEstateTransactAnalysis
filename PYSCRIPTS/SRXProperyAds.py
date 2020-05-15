@@ -4,14 +4,12 @@ import re
 import pandas as pd
 import sys
 from datetime import datetime
-import ascii
 
-asciiList = ascii.charlist()
 PropAdDf = pd.DataFrame(columns=['CondoName', 'Price', 'Type', 'Tenure', 'TOP', 'Area', 'PSF', 'AgentsNumber' ])
-outputDir = 'I:\\REAL_ESTATE_DATA\\UNITS_FOR_SALE'
+outputDir = "I:\\REAL_ESTATE_DATA\\UNITS_IN_MARKET"
 # outputFileName = 'UnitsInMarket_'+ datetime.today().strftime('%d_%m_%Y')  + '.xlsx'
 outputFileName = 'UnitsInMarket_'+ datetime.today().strftime('%d_%m_%Y')  + '.csv'
-for i in range(1,5) :
+for i in range(1,1300) :
     print("Scraping Web Page:", i)
     URL = 'https://www.srx.com.sg/search/sale/condo?page=' + str(i)
     try:
@@ -38,6 +36,8 @@ for i in range(1,5) :
             print(e)
             continue
         price = m.group(2).strip()
+        price = re.sub('<div.*','', price)
+        price = re.sub('View to offer','0', price)
         details = m.group(3).strip()
         details = re.sub('<.*?span>', '', details)
         details = re.sub('&#8226;', '', details)
@@ -71,4 +71,5 @@ for i in range(1,5) :
 
 PropAdDf = PropAdDf.set_index('CondoName')
 # PropAdDf.to_excel(outputDir + '\\' + outputFileName )
-PropAdDf.to_csv(outputDir + '\\' + outputFileName )
+print("Writting to ", outputDir , "\\" , outputFileName, "...")
+PropAdDf.to_csv(outputDir + "\\" + outputFileName )

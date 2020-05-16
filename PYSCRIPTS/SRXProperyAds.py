@@ -5,11 +5,11 @@ import pandas as pd
 import sys
 from datetime import datetime
 
-PropAdDf = pd.DataFrame(columns=['CondoName', 'Price', 'Type', 'Tenure', 'TOP', 'Area', 'PSF', 'AgentsNumber' ])
+PropAdDf = pd.DataFrame(columns=['CondoName', 'Price', 'BedRooms', 'BathRooms', 'Type', 'Tenure', 'TOP', 'Area', 'PSF', 'AgentsNumber' ])
 outputDir = "I:\\REAL_ESTATE_DATA\\UNITS_IN_MARKET"
 # outputFileName = 'UnitsInMarket_'+ datetime.today().strftime('%d_%m_%Y')  + '.xlsx'
 outputFileName = 'UnitsInMarket_'+ datetime.today().strftime('%d_%m_%Y')  + '.csv'
-for i in range(1,1300) :
+for i in range(1,5) :
     print("Scraping Web Page:", i)
     URL = 'https://www.srx.com.sg/search/sale/condo?page=' + str(i)
     try:
@@ -28,7 +28,10 @@ for i in range(1,1300) :
 
     listings = listings[1:]
     for listing in listings[:] :
-        m = re.search('<span class="notranslate">(.*?)</span>.*<div class="listingDetailPrice">(.*?)</div>.*<div class="listingDetailType">(.*?)</div>.*<div class="listingDetailValues">(.*?)</div>.*<input class="mobile-number-full" hidden="" value="(\d+)" ?/>.*<div class="listingDetailAgentAgencyText ">(.*?)</div>', listing)
+        # m = re.search('<span class="notranslate">(.*?)</span>.*<div class="listingDetailPrice">(.*?)</div>.*<div class="listingDetailType">(.*?)</div>.*<div class="listingDetailValues">(.*?)</div>.*<input class="mobile-number-full" hidden="" value="(\d+)" ?/>.*<div class="listingDetailAgentAgencyText ">(.*?)</div>', listing)
+        m = re.search(
+            '<span class="notranslate">(.*?)</span>.*<div class="listingDetailPrice">(.*?)</div>.*<div class="listingDetailType">(.*?)</div>.*<div class="listingDetailValues">(.*?)</div>.*<div class="listingDetailRoomNo">(.*?)</div> <div class="listingDetailToiletNo">(.*?)</div>.*<input class="mobile-number-full" hidden="" value="(\d+)" ?/>.*<div class="listingDetailAgentAgencyText ">(.*?)</div>',
+            listing)
         try:
             condoName = m.group(1).strip()
         except Exception as e:
@@ -63,9 +66,12 @@ for i in range(1,1300) :
             print(condoName, "|Error while unpacking priceDetails-", priceDetails)
             print(priceDetails.split(' '))
 
-        agentsNumber = m.group(5).strip()
-        agentsComment = m.group(6).strip()
-        dictionary = { 'CondoName': [condoName], 'Price': [price], 'Type': [type], 'Tenure': [tenure], 'TOP':[top] , 'Area':[area], 'PSF': [psf], 'AgentsNumber': [agentsNumber], 'PageNo': [i], 'Source': ['SRX'], 'AgentsComment': [agentsComment] }
+        bedrooms = m.group(5)
+        bathrooms = m.group(6)
+        # print(condoName, "has", bedrooms, "bedrooms and", bathrooms, "bathrooms")
+        agentsNumber = m.group(7).strip()
+        agentsComment = m.group(8).strip()
+        dictionary = { 'CondoName': [condoName], 'Price': [price], 'BedRooms': [bedrooms], 'BathRooms': bathrooms,  'Type': [type], 'Tenure': [tenure], 'TOP':[top] , 'Area':[area], 'PSF': [psf], 'AgentsNumber': [agentsNumber], 'PageNo': [i], 'Source': ['SRX'], 'AgentsComment': [agentsComment] }
         temp_df = pd.DataFrame.from_dict(dictionary)
         PropAdDf = PropAdDf.append(temp_df)
 

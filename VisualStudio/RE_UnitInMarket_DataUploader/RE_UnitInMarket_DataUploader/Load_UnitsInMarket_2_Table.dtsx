@@ -11,8 +11,8 @@
   DTS:LocaleID="18441"
   DTS:ObjectName="Load_UnitsInMarket_2_Table"
   DTS:PackageType="5"
-  DTS:VersionBuild="146"
-  DTS:VersionGUID="{100B4D16-BD60-4662-AF4E-FDE24C0D7061}">
+  DTS:VersionBuild="147"
+  DTS:VersionGUID="{426667CA-6AE5-40B5-922F-D93FD1FED74D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5170,6 +5170,24 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\LOAD_DATA_TO_STAGING_ONE_BY_ONE\Move_UnitInMarket_LoadedFiles"
+          DTS:CreationName="Microsoft.ExecuteProcess"
+          DTS:Description="Execute Process Task"
+          DTS:DTSID="{294AB138-E3C0-4655-8E27-52371D4B298F}"
+          DTS:ExecutableType="Microsoft.ExecuteProcess"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Move_UnitInMarket_LoadedFiles"
+          DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="Arguments">@[User::FileToProcess]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <ExecuteProcessData
+              Executable="G:\WEBSCRAP\REAL_ESTATE\MoveLoaded_UnitInMarketAdFiles.bat" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\LOAD_DATA_TO_STAGING_ONE_BY_ONE\TRUNCATE STG_UNIT_IN_MARKET"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Empty the Staging Table"
@@ -5213,6 +5231,14 @@
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
           DTS:To="Package\LOAD_DATA_TO_STAGING_ONE_BY_ONE\MARK_PROCESSED_FILE_ON_AUDIT_TABLE" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\LOAD_DATA_TO_STAGING_ONE_BY_ONE.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{DEC7F07C-9C53-40F2-BDDB-CB21DF006EE6}"
+          DTS:From="Package\LOAD_DATA_TO_STAGING_ONE_BY_ONE\MARK_PROCESSED_FILE_ON_AUDIT_TABLE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\LOAD_DATA_TO_STAGING_ONE_BY_ONE\Move_UnitInMarket_LoadedFiles" />
       </DTS:PrecedenceConstraints>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
@@ -5356,11 +5382,49 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="231.2,41.6"
+          Id="Package\LOAD_DATA_TO_STAGING_ONE_BY_ONE\Move_UnitInMarket_LoadedFiles"
+          TopLeft="143.199988555909,331.946669438256" />
+        <EdgeLayout
+          Id="Package\LOAD_DATA_TO_STAGING_ONE_BY_ONE.PrecedenceConstraints[Constraint 3]"
+          TopLeft="293.73331682947,272.266668843163">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-59.7333282735613,59.6800005950932"
+              Start="0,0"
+              End="-59.7333282735613,52.1800005950932">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.8400002975466" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.8400002975466"
+                    Point2="0,29.8400002975466"
+                    Point3="-4,29.8400002975466" />
+                  <mssgle:LineSegment
+                    End="-55.7333282735613,29.8400002975466" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-55.7333282735613,29.8400002975466"
+                    Point2="-59.7333282735613,29.8400002975466"
+                    Point3="-59.7333282735613,33.8400002975466" />
+                  <mssgle:LineSegment
+                    End="-59.7333282735613,52.1800005950932" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="450.4,327.2"
-          Size="450.4,370.4"
+          PanelSize="450.4,428.8"
+          Size="450.4,472"
           Id="Package\LOAD_DATA_TO_STAGING_ONE_BY_ONE"
           TopLeft="144.66666091813,80.3666652064852" />
         <EdgeLayout
@@ -5369,9 +5433,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-43.1999930858609,27.0866651899548"
+              EndConnector="-43.1999930858611,27.0866651899548"
               Start="0,0"
-              End="-43.1999930858609,19.5866651899548">
+              End="-43.1999930858611,19.5866651899548">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -5382,13 +5446,13 @@
                     Point2="0,13.5433325949774"
                     Point3="-4,13.5433325949774" />
                   <mssgle:LineSegment
-                    End="-39.1999930858609,13.5433325949774" />
+                    End="-39.1999930858611,13.5433325949774" />
                   <mssgle:CubicBezierSegment
-                    Point1="-39.1999930858609,13.5433325949774"
-                    Point2="-43.1999930858609,13.5433325949774"
-                    Point3="-43.1999930858609,17.5433325949774" />
+                    Point1="-39.1999930858611,13.5433325949774"
+                    Point2="-43.1999930858611,13.5433325949774"
+                    Point3="-43.1999930858611,17.5433325949774" />
                   <mssgle:LineSegment
-                    End="-43.1999930858609,19.5866651899548" />
+                    End="-43.1999930858611,19.5866651899548" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

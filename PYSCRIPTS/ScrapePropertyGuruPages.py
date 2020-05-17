@@ -19,7 +19,7 @@ for file in oldFilesList:
     os.remove(file)
 
 counter= 1
-for i in range(1,4):
+for i in range(1,51):
     url = 'https://www.propertyguru.com.sg/property-for-sale/{}?property_type=N&property_type_code%5B0%5D=APT&property_type_code%5B1%5D=CLUS&property_type_code%5B2%5D=CONDO&property_type_code%5B3%5D=EXCON&property_type_code%5B4%5D=WALK'.format(i)
     webbrowser.open(url)
     time.sleep(random.randint(6,10))

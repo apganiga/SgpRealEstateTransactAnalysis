@@ -5,11 +5,50 @@ import pandas as pd
 import sys
 from datetime import datetime
 
-PropAdDf = pd.DataFrame(columns=['CondoName', 'Price', 'BedRooms', 'BathRooms', 'Type', 'Tenure', 'TOP', 'Area', 'PSF', 'AgentsNumber' ])
+PropAdDf = pd.DataFrame(columns=['CondoName', 'Price', 'Area', 'PSF', 'BedRooms', 'BathRooms', 'Type', 'Tenure', 'TOP',  'AgentsNumber', 'PageNo', 'Source', 'AgentsComment'])
 outputDir = "I:\\REAL_ESTATE_DATA\\UNITS_IN_MARKET"
 # outputFileName = 'UnitsInMarket_'+ datetime.today().strftime('%d_%m_%Y')  + '.xlsx'
-outputFileName = 'UnitsInMarket_'+ datetime.today().strftime('%d_%m_%Y')  + '.csv'
-for i in range(1,5) :
+outputFileName = 'UnitsInMarket_'+ datetime.today().strftime('%d_%m_%Y')  + '_SRX' + '.csv'
+
+def extract(pattern, listing, type='str', imp='N', unwanted=[], splitter=[]):
+    m = re.search(pattern, listing)
+    if m:
+        try:
+            result = m.group(1).strip()
+            if len(unwanted) > 0:
+                for chars in unwanted :
+                    result = result.replace(chars, "")
+
+            if len(splitter) > 0:
+                splitresult = result.split(splitter[0])
+                if splitter[1] == len(splitresult):
+                    result = splitresult
+                elif splitter[1] < len(splitresult):
+                    result = splitresult[:splitter[1]+1]
+                elif splitter[1] > len(splitresult):
+                    # print("expected value=", splitter[1], "But len(splitterResult)=",len(splitresult),"SplitterResult=", splitresult)
+                    splitresult.extend(['-']*(splitter[1]-(len(splitresult))))
+                    result = splitresult
+                    #Apending '-' to remaining expected value
+        except Exception as e:
+            print("Error:", e)
+            if len(splitter) > 0:
+                print(splitresult)
+                print("Result Returned:", result)
+            print("Error While Extracting: pattern")
+            print(m)
+    else:
+        if imp == 'Y':
+            result = None
+        else:
+            if type== 'str':
+                result = '---'
+            elif type == 'int':
+                result = 0
+    return result
+
+
+for i in range(1,50) :
     print("Scraping Web Page:", i)
     URL = 'https://www.srx.com.sg/search/sale/condo?page=' + str(i)
     try:
@@ -28,53 +67,20 @@ for i in range(1,5) :
 
     listings = listings[1:]
     for listing in listings[:] :
-        # m = re.search('<span class="notranslate">(.*?)</span>.*<div class="listingDetailPrice">(.*?)</div>.*<div class="listingDetailType">(.*?)</div>.*<div class="listingDetailValues">(.*?)</div>.*<input class="mobile-number-full" hidden="" value="(\d+)" ?/>.*<div class="listingDetailAgentAgencyText ">(.*?)</div>', listing)
-        m = re.search(
-            '<span class="notranslate">(.*?)</span>.*<div class="listingDetailPrice">(.*?)</div>.*<div class="listingDetailType">(.*?)</div>.*<div class="listingDetailValues">(.*?)</div>.*<div class="listingDetailRoomNo">(.*?)</div> <div class="listingDetailToiletNo">(.*?)</div>.*<input class="mobile-number-full" hidden="" value="(\d+)" ?/>.*<div class="listingDetailAgentAgencyText ">(.*?)</div>',
-            listing)
-        try:
-            condoName = m.group(1).strip()
-        except Exception as e:
-            print("Error while getting the condo Name")
-            print(e)
-            continue
-        price = m.group(2).strip()
-        price = re.sub('<div.*','', price)
-        price = re.sub('View to offer','0', price)
-        details = m.group(3).strip()
-        details = re.sub('<.*?span>', '', details)
-        details = re.sub('&#8226;', '', details)
-        details = re.sub('  ', ' ', details)
-        try:
-           (type, tenure, top, *_) = details.split(' ')
-        except Exception as e:
-            print(condoName, "|Error while unpacking details-", details)
-            print("Exception:", e)
-            splitDetails = details.split(' ')
-            if len(splitDetails) == 2 and ( splitDetails[0] == 'Condo' and 'Built' in splitDetails[1]) :
-                print("Since only 2 items in detail, setting tenure and type to", splitDetails )
-                [type, tenure] = splitDetails
-
-        priceDetails = m.group(4).strip()
-        try:
-            if '/' in priceDetails:
-                (area, psf) = priceDetails.split(' / ')
-            else:
-                area = priceDetails
-                psf = '-'
-        except Exception as e:
-            print(condoName, "|Error while unpacking priceDetails-", priceDetails)
-            print(priceDetails.split(' '))
-
-        bedrooms = m.group(5)
-        bathrooms = m.group(6)
-        # print(condoName, "has", bedrooms, "bedrooms and", bathrooms, "bathrooms")
-        agentsNumber = m.group(7).strip()
-        agentsComment = m.group(8).strip()
-        dictionary = { 'CondoName': [condoName], 'Price': [price], 'BedRooms': [bedrooms], 'BathRooms': bathrooms,  'Type': [type], 'Tenure': [tenure], 'TOP':[top] , 'Area':[area], 'PSF': [psf], 'AgentsNumber': [agentsNumber], 'PageNo': [i], 'Source': ['SRX'], 'AgentsComment': [agentsComment] }
+        condoName = extract('<span class="notranslate">(.*?)</span>', listing, type='str', imp='Y', )
+        price = extract('<div class="listingDetailPrice">(.*?)</div>', listing, type='int', imp='Y')
+        (area, psf) = extract('<div class="listingDetailValues">(.*?)</div>', listing,type='str',imp='N', unwanted=[' ', '(Built)'], splitter=['/',2])
+        type = 'Condo'
+        (_,tenure, top) = extract('<div class="listingDetailType">(.*?)</div>', listing, type='str', imp='N', unwanted=['<span>', '</span>',' ', '&#8226', 'Condo' ], splitter=[';',3])
+        bedrooms = extract('<div class="listingDetailRoomNo">(.*?)</div>', listing, type='int', imp='N')
+        bathrooms = extract('<div class="listingDetailToiletNo">(.*?)</div>', listing, type='int', imp='N')
+        agentsNumber = extract('<input class="mobile-number-full" hidden="" value="(\d+)" ?/>', listing, type='str', imp='N')
+        agentsComment = extract('<div class="listingDetailAgentAgencyText ">(.*?)</div>', listing,  type='str', imp='N')
+        # print(condoName, price, area,  bedrooms, bathrooms,tenure, TOP, agentsNumber, agentsComment)
+        dictionary = { 'CondoName': [condoName], 'Price': [price] , 'Area':[area], 'PSF': [psf], 'BedRooms': [bedrooms], 'BathRooms': bathrooms,  'Type': [type], 'Tenure': [tenure], 'TOP':[top] , 'AgentsNumber': [agentsNumber], 'PageNo': [i], 'Source': ['SRX'], 'AgentsComment': [agentsComment] }
         temp_df = pd.DataFrame.from_dict(dictionary)
         PropAdDf = PropAdDf.append(temp_df)
-
+# exit()
 PropAdDf = PropAdDf.set_index('CondoName')
 # PropAdDf.to_excel(outputDir + '\\' + outputFileName )
 print("Writting to ", outputDir , "\\" , outputFileName, "...")

@@ -69,9 +69,11 @@ for i in range(1,50) :
     for listing in listings[:] :
         condoName = extract('<span class="notranslate">(.*?)</span>', listing, type='str', imp='Y', )
         price = extract('<div class="listingDetailPrice">(.*?)</div>', listing, type='int', imp='Y')
+        price = price.split('<')[0] ## Requirement for SSIS pockage to prefix $ for Price
         (area, psf) = extract('<div class="listingDetailValues">(.*?)</div>', listing,type='str',imp='N', unwanted=[' ', '(Built)'], splitter=['/',2])
         type = 'Condo'
         (_,tenure, top) = extract('<div class="listingDetailType">(.*?)</div>', listing, type='str', imp='N', unwanted=['<span>', '</span>',' ', '&#8226', 'Condo' ], splitter=[';',3])
+        top = top.split('<')[0]
         bedrooms = extract('<div class="listingDetailRoomNo">(.*?)</div>', listing, type='int', imp='N')
         bathrooms = extract('<div class="listingDetailToiletNo">(.*?)</div>', listing, type='int', imp='N')
         agentsNumber = extract('<input class="mobile-number-full" hidden="" value="(\d+)" ?/>', listing, type='str', imp='N')

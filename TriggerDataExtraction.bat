@@ -1,1 +1,1 @@
-python G:\WEBSCRAP\REAL_ESTATE\SgpRealEstateTransactions.py
+python G:\WEBSCRAP\REAL_ESTATE\PYSCRIPTS\SgpRealEstateTransactions.py

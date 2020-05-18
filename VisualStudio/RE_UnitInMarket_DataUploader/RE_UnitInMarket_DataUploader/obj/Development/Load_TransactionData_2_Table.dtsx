@@ -1,0 +1,1229 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/17/2020 5:17:08 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ANANTHIDEAPAD"
+  DTS:CreatorName="ANANTHIDEAPAD\User"
+  DTS:DTSID="{38B492F6-92C4-4348-9C5B-B2960E202790}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.94"
+  DTS:LocaleID="18441"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="52"
+  DTS:VersionGUID="{180F63AF-9E45-4E55-9408-A1198613ACF6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.REAL_ESTATE]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{EA9EF79C-3480-4D37-BE92-CFDB0ED6FE5A}"
+      DTS:ObjectName="LocalHost.REAL_ESTATE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=REAL_ESTATE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[TransactionDataFiles.csv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{367FA22C-1240-405C-8DC4-FD219D50FFCF}"
+      DTS:ObjectName="TransactionDataFiles.csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="18441"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="I:\REAL_ESTATE_DATA\DATA_TO_PROCESS\TransactionData_05_05_2020_3.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CondoName"
+              DTS:DTSID="{30F8A5C8-7111-4444-ACE8-1FD8EAC065A0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="area"
+              DTS:DTSID="{C4D08614-AFAB-4EF4-99F4-0DF70D4A940C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="floorRange"
+              DTS:DTSID="{79C9DEE7-7F33-4132-A884-1DEA89804644}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="noOfUnits"
+              DTS:DTSID="{BCEB5BD7-9C6A-4CD9-A97A-2D5CB0CB8F27}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="contractDate"
+              DTS:DTSID="{FDC4D6D6-A895-4EB0-8C33-60C90642773F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="typeOfSale"
+              DTS:DTSID="{4D3457BA-FBFA-4786-BF22-F588B3CFAD51}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="price"
+              DTS:DTSID="{A55C6DB0-1FAE-41E5-91BE-DE4778FAD05A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="propertyType"
+              DTS:DTSID="{D1E69AB5-1551-4F78-A91D-614BD310AF87}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="district"
+              DTS:DTSID="{1B1D64A2-3F39-42F7-A444-5B222ED8AB0D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="typeOfArea"
+              DTS:DTSID="{5D92E175-7EF0-41CF-ACA8-02E7096004EB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tenure"
+              DTS:DTSID="{5BC180CB-AABC-491B-8BAD-7891F6061A87}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="contractDate_mm"
+              DTS:DTSID="{DFFD849C-F989-45B8-8972-3CBB3CE9367B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="contractDate_yy"
+              DTS:DTSID="{23ADC15B-BC10-4A53-ACD6-A21068DD7526}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Transaction_CSV_File]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="Transaction Data Files in Csv Format"
+      DTS:DTSID="{4DDA8531-A957-4167-A1CD-9A6C4F1F3CBE}"
+      DTS:ObjectName="Transaction_CSV_File">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::FileToProcess]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="18441"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CondoName"
+              DTS:DTSID="{64DEF74F-B3D7-4C9F-A107-EA575717C9F3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="area"
+              DTS:DTSID="{5C5BB714-11A2-46EB-A10C-A8732028A76B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="floorRange"
+              DTS:DTSID="{29726208-44B1-44CB-8A3B-1B52B548F4C2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="noOfUnits"
+              DTS:DTSID="{DA20D8DA-873D-42D6-BC88-2E38892D672A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="contractDate"
+              DTS:DTSID="{47A18645-E02D-4A06-8377-FE88B7D312F9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="typeOfSale"
+              DTS:DTSID="{3F338D48-C05F-4D6E-955F-FDF90E8A945B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="price"
+              DTS:DTSID="{E28231C4-6BC6-4FC2-B138-27647BFC7C22}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="propertyType"
+              DTS:DTSID="{AEF4F66C-FB84-4A22-9B82-8074AC419D02}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="district"
+              DTS:DTSID="{CD53D86D-8203-4380-A827-F72BD727DE6A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="typeOfArea"
+              DTS:DTSID="{D8C7BD30-3897-4579-B956-44BE3DF09FD1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tenure"
+              DTS:DTSID="{2EDC41B1-283D-4E71-B4AF-8E8FEA396EBB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="contractDate_mm"
+              DTS:DTSID="{BCE74DB2-D730-4ED8-B312-6937FCC7ABA8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="contractDate_yy"
+              DTS:DTSID="{F290B56A-9435-4E27-B603-5BB3B38D4E5E}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4987F2D4-B41A-4EE0-B195-910B9AF2A6FA}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileToProcess">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{389E95FD-90CD-45B1-8B04-748662755903}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="objFilesListToProcess">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\GET_FILES_TO_LOAD"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{be1cf70f-c873-4d7c-aa9d-bdff07901170}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GET_FILES_TO_LOAD"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{EA9EF79C-3480-4D37-BE92-CFDB0ED6FE5A}"
+          SQLTask:SqlStatementSource="SELECT TOP 1 [FileName] FROM [dbo].[FILE_PROCESSED]&#xA;WHERE [Loaded] = 'N'&#xA;And FileName Like '%TransactionData_%'"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::objFilesListToProcess" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GET_FILES_TO_LOAD 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{856dbd81-701a-4b9a-ba84-9cbd732cdbdb}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GET_FILES_TO_LOAD 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{EA9EF79C-3480-4D37-BE92-CFDB0ED6FE5A}"
+          SQLTask:SqlStatementSource="SELECT [FileName] FROM [dbo].[FILE_PROCESSED]&#xA;WHERE [Loaded] = 'N'&#xA;AND FileName LIke '%Transaction%'"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::objFilesListToProcess" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{b85ec198-28dc-49a9-9857-6f8c7a6cdd95}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:DTSID="{ca7ccddf-b033-4543-895c-86fba310fdc6}"
+        DTS:ObjectName="{7EB1241C-8521-4376-9950-A9B15FCBFF72}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::objFilesListToProcess" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{3AF5E060-B6A2-4A73-9B59-88E44E1118C0}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="18441"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[TransactionDataFiles.csv]"
+                      connectionManagerRefId="Package.ConnectionManagers[TransactionDataFiles.csv]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[CondoName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CondoName]"
+                          length="50"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[CondoName]"
+                          name="CondoName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[area]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[area]"
+                          length="50"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[area]"
+                          name="area"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[floorRange]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[floorRange]"
+                          length="50"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[floorRange]"
+                          name="floorRange"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[noOfUnits]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[noOfUnits]"
+                          length="50"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[noOfUnits]"
+                          name="noOfUnits"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[contractDate]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[contractDate]"
+                          length="50"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[contractDate]"
+                          name="contractDate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[typeOfSale]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[typeOfSale]"
+                          length="50"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[typeOfSale]"
+                          name="typeOfSale"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[price]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[price]"
+                          length="50"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[price]"
+                          name="price"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[propertyType]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[propertyType]"
+                          length="50"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[propertyType]"
+                          name="propertyType"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[district]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[district]"
+                          length="50"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[district]"
+                          name="district"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[typeOfArea]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[typeOfArea]"
+                          length="50"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[typeOfArea]"
+                          name="typeOfArea"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[tenure]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[tenure]"
+                          length="50"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[tenure]"
+                          name="tenure"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[contractDate_mm]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[contractDate_mm]"
+                          length="50"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[contractDate_mm]"
+                          name="contractDate_mm"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[contractDate_yy]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[contractDate_yy]"
+                          length="50"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[contractDate_yy]"
+                          name="contractDate_yy"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CondoName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CondoName" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[area]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="area" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[floorRange]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="floorRange" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[noOfUnits]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="noOfUnits" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[contractDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="contractDate" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[typeOfSale]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="typeOfSale" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[price]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="price" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[propertyType]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="propertyType" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[district]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="district" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[typeOfArea]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="typeOfArea" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[tenure]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="tenure" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[contractDate_mm]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="contractDate_mm" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[contractDate_yy]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="contractDate_yy" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stg].[STG_TRANSACTIONS]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.REAL_ESTATE]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.REAL_ESTATE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="IgnoreFailure"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[area]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="area"
+                          externalMetadataColumnId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Area]"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[area]" />
+                        <inputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CondoName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CondoName"
+                          externalMetadataColumnId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CONDO_NAME]"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[CondoName]" />
+                        <inputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[typeOfArea]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="typeOfArea"
+                          externalMetadataColumnId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[typeOfArea]"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[typeOfArea]" />
+                        <inputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[typeOfSale]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="typeOfSale"
+                          externalMetadataColumnId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[typeOfSale]"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[typeOfSale]" />
+                        <inputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[noOfUnits]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="noOfUnits"
+                          externalMetadataColumnId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[noOfUnits]"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[noOfUnits]" />
+                        <inputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[propertyType]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="propertyType"
+                          externalMetadataColumnId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[propertyType]"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[propertyType]" />
+                        <inputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[contractDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="contractDate"
+                          externalMetadataColumnId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[contractDate_str]"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[contractDate]" />
+                        <inputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[district]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="district"
+                          externalMetadataColumnId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[district]"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[district]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CONDO_NAME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="CONDO_NAME" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Area]"
+                          dataType="i4"
+                          name="Area" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[typeOfArea]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="typeOfArea" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[typeOfSale]"
+                          dataType="i2"
+                          name="typeOfSale" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[floorRange_low]"
+                          dataType="i2"
+                          name="floorRange_low" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[floorRange_high]"
+                          dataType="i2"
+                          name="floorRange_high" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[noOfUnits]"
+                          dataType="i2"
+                          name="noOfUnits" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[propertyType]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="propertyType" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[contractDate_dt]"
+                          dataType="dbDate"
+                          name="contractDate_dt" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[contractDate_str]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="contractDate_str" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[contractDate_month]"
+                          dataType="i2"
+                          name="contractDate_month" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[contractDate_year]"
+                          dataType="i2"
+                          name="contractDate_year" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[district]"
+                          dataType="i2"
+                          name="district" />
+                        <externalMetadataColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateCaptured]"
+                          dataType="dbTimeStamp"
+                          name="DateCaptured" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task.Paths[Flat File Source Output]"
+                  endId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{48FC9F02-A1EB-4F5A-8D3B-D827627916CF}"
+          DTS:ObjectName="{48FC9F02-A1EB-4F5A-8D3B-D827627916CF}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::FileToProcess" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{161B7AE3-D493-4382-B78E-CC7FABEF0E98}"
+      DTS:From="Package\GET_FILES_TO_LOAD 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\GET_FILES_TO_LOAD"
+          TopLeft="313.999987522761,267.626668793572" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task"
+          TopLeft="125.599991893769,28.266668264601" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="427.2,211.2"
+          Size="427.2,254.4"
+          Id="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE"
+          TopLeft="78.6666635407343,131.779999024709" />
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\GET_FILES_TO_LOAD 1"
+          TopLeft="209.333325015174,46.5066669917637" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="303.733325015174,88.1066669917637">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11.4666614744401,43.673332032945"
+              Start="0,0"
+              End="-11.4666614744401,36.173332032945">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.8366660164725" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.8366660164725"
+                    Point2="0,21.8366660164725"
+                    Point3="-4,21.8366660164725" />
+                  <mssgle:LineSegment
+                    End="-7.46666147444006,21.8366660164725" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.46666147444006,21.8366660164725"
+                    Point2="-11.4666614744401,21.8366660164725"
+                    Point3="-11.4666614744401,25.8366660164725" />
+                  <mssgle:LineSegment
+                    End="-11.4666614744401,36.173332032945" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\Flat File Source"
+          TopLeft="247.2,31.2" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination"
+          TopLeft="237.6,293.6" />
+        <EdgeLayout
+          Id="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="323,72.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,220.8"
+              Start="0,0"
+              End="0,213.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,213.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,98.65,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

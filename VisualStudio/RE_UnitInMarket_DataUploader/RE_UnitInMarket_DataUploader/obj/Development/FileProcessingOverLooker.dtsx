@@ -12,8 +12,8 @@
   DTS:LocaleID="18441"
   DTS:ObjectName="MysteryPackage"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{5868F33A-4934-4568-87D8-13F77AD9444F}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{5EE8C376-E580-4960-8F56-E333B8A3585D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -312,9 +312,9 @@
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
             <FEFEProperty
-              Folder="I:\REAL_ESTATE_DATA\UNITS_IN_MARKET" />
+              Folder="I:\REAL_ESTATE_DATA\DATA_TO_PROCESS" />
             <FEFEProperty
-              FileSpec="UnitsInMarket_*.csv" />
+              FileSpec="*.csv" />
             <FEFEProperty
               FileNameRetrievalType="0" />
             <FEFEProperty
@@ -352,8 +352,8 @@
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{E99E042C-9129-44C0-B5F8-5F9FF7041346}"
-          DTS:ObjectName="{E99E042C-9129-44C0-B5F8-5F9FF7041346}"
+          DTS:DTSID="{871B7A0F-CB7F-431B-BEF2-CB755E52796A}"
+          DTS:ObjectName="{871B7A0F-CB7F-431B-BEF2-CB755E52796A}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::FileName" />
       </DTS:ForEachVariableMappings>

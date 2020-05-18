@@ -3,6 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="b6b527a6-8884-4e72-8b94-4559d50dfd28" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VisualStudio/RE_UnitInMarket_DataUploader/.vs/REAL_ESTATE_DATA_LOADING/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/VisualStudio/RE_UnitInMarket_DataUploader/.vs/REAL_ESTATE_DATA_LOADING/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VisualStudio/RE_UnitInMarket_DataUploader/RE_UnitInMarket_DataUploader/FileProcessingOverLooker.dtsx" beforeDir="false" afterPath="$PROJECT_DIR$/VisualStudio/RE_UnitInMarket_DataUploader/RE_UnitInMarket_DataUploader/FileProcessingOverLooker.dtsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VisualStudio/RE_UnitInMarket_DataUploader/RE_UnitInMarket_DataUploader/Load_UnitsInMarket_2_Table.dtsx" beforeDir="false" afterPath="$PROJECT_DIR$/VisualStudio/RE_UnitInMarket_DataUploader/RE_UnitInMarket_DataUploader/Load_UnitsInMarket_2_Table.dtsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VisualStudio/RE_UnitInMarket_DataUploader/RE_UnitInMarket_DataUploader/RE_UnitInMarket_DataUploader.dtproj" beforeDir="false" afterPath="$PROJECT_DIR$/VisualStudio/RE_UnitInMarket_DataUploader/RE_UnitInMarket_DataUploader/RE_UnitInMarket_DataUploader.dtproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VisualStudio/RE_UnitInMarket_DataUploader/RE_UnitInMarket_DataUploader/bin/Development/RE_UnitInMarket_DataUploader.ispac" beforeDir="false" afterPath="$PROJECT_DIR$/VisualStudio/RE_UnitInMarket_DataUploader/RE_UnitInMarket_DataUploader/bin/Development/RE_UnitInMarket_DataUploader.ispac" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VisualStudio/RE_UnitInMarket_DataUploader/RE_UnitInMarket_DataUploader/obj/Development/BuildLog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/VisualStudio/RE_UnitInMarket_DataUploader/RE_UnitInMarket_DataUploader/obj/Development/BuildLog.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VisualStudio/RE_UnitInMarket_DataUploader/RE_UnitInMarket_DataUploader/obj/Development/FileProcessingOverLooker.dtsx" beforeDir="false" afterPath="$PROJECT_DIR$/VisualStudio/RE_UnitInMarket_DataUploader/RE_UnitInMarket_DataUploader/obj/Development/FileProcessingOverLooker.dtsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VisualStudio/RE_UnitInMarket_DataUploader/RE_UnitInMarket_DataUploader/obj/Development/Load_UnitsInMarket_2_Table.dtsx" beforeDir="false" afterPath="$PROJECT_DIR$/VisualStudio/RE_UnitInMarket_DataUploader/RE_UnitInMarket_DataUploader/obj/Development/Load_UnitsInMarket_2_Table.dtsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VisualStudio/RE_UnitInMarket_DataUploader/RE_UnitInMarket_DataUploader/obj/Development/RE_UnitInMarket_DataUploader.dtproj" beforeDir="false" afterPath="$PROJECT_DIR$/VisualStudio/RE_UnitInMarket_DataUploader/RE_UnitInMarket_DataUploader/obj/Development/RE_UnitInMarket_DataUploader.dtproj" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,7 +21,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PYSCRIPTS/SRXProperyAds.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="160">
@@ -24,7 +33,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PYSCRIPTS/PropGuruAds.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
@@ -243,16 +252,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PYSCRIPTS/SRXProperyAds.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="71" column="16" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PYSCRIPTS/ScrapePropertyGuruPages.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
@@ -269,6 +268,16 @@
           <caret line="64" column="39" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PYSCRIPTS/SRXProperyAds.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="71" column="16" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>

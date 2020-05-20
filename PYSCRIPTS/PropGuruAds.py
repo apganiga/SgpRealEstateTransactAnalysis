@@ -8,16 +8,16 @@ import shutil
 
 fileLocation = "I:\\REAL_ESTATE_DATA\\AUTO_GUI_STAGING"
 filesToProcess = glob.glob(fileLocation + "\\*.html")
-outputDir = "I:\\REAL_ESTATE_DATA\\UNITS_IN_MARKET"
+outputDir = "I:\\REAL_ESTATE_DATA\\DATA_TO_PROCESS"
 outputFileName = 'UnitsInMarket_'+ datetime.today().strftime('%d_%m_%Y')  + '_PG'+ '.csv'
 
 processedFilesDir = "I:\\REAL_ESTATE_DATA\\AUTO_GUI_STAGING\\PROCESSED_" + datetime.today().strftime('%d_%m_%Y')
 if not os.path.exists(processedFilesDir):
     os.makedirs(processedFilesDir)
 
-condoDF = pd.DataFrame(columns=['CondoName', 'Price' , 'Area', 'PSF' , 'BedRooms', 'BathRooms', 'Type', 'Tenure', 'TOP', 'AgentsNumber', 'PageNo', 'Source', 'AgentsComment'])
+condoDF = pd.DataFrame(columns=['CondoName', 'Price' , 'Area', 'PSF' , 'BedRooms', 'BathRooms', 'Type', 'Tenure', 'TOP', 'AgentName','AgentsNumber', 'PageNo', 'Source', 'AgentsComment'])
 condoDict = dict()
-for file in filesToProcess:
+for file in filesToProcess[:]:
     print("PROCESSING FILE:", file)
     with open(file, encoding="utf8") as fh:
         data = fh.readlines()
@@ -50,15 +50,26 @@ for file in filesToProcess:
             areaPos = data.index("sqft<", startPos)
             area = data[areaPos-10: areaPos].split('>')[1] + 'sqft'  ## SSIS requirement for Area with sqft
 
+            agentNamePos = data.index('Listed by <span class="html-tag">&lt;span <span class="html-attribute-name">class</span>="<span class="html-attribute-value">name</span>"&gt;</span>', startPos) \
+                           + len('Listed by <span class="html-tag">&lt;span <span class="html-attribute-name">class</span>="<span class="html-attribute-value">name</span>"&gt;</span>')
+            agentName = data[agentNamePos:agentNamePos+20].split('<')[0]
+            # agentName= '--'
+
+
+            sourcePos = data.index('class="html-attribute-value html-external-link" target="_blank" href="https://www.propertyguru.com.sg/listing/', startPos) + len('class="html-attribute-value html-external-link" target="_blank" href="')
+            # print("sourcePos=", sourcePos)
+            source = data[sourcePos:sourcePos+140].split('"')[0]
+
+
             agentPos = data.index('listing-agent-phone-number hide</span>"&gt;</span>', startPos) + len('listing-agent-phone-number hide</span>"&gt;</span>')
             agentNumber = data[agentPos: agentPos+20].split('<')[0].replace(' ','').replace('+65','')
-            if 'The Florence Residences' in condoName:
-                print("CONDO:", condoName)
-                print("PSF:", psf)
-                print("agent Number:", agentNumber)
-                print("Area:", area)
-            condoDF = condoDF.append(pd.DataFrame([[condoName, price , area,  psf, bedrooms, bathrooms, 'Condo', '---', '---', agentNumber, '---', 'PG', '---']],
-                                                  columns=['CondoName', 'Price' , 'Area', 'PSF' , 'BedRooms', 'BathRooms', 'Type', 'Tenure', 'TOP', 'AgentsNumber', 'PageNo', 'Source', 'AgentsComment']))
+
+            # print("CONDO:", condoName)
+            # print("AGENT NAME=", agentName)
+            # print("SOURCE=", source)
+
+            condoDF = condoDF.append(pd.DataFrame([[condoName, price , area,  psf, bedrooms, bathrooms, 'Condo', '---', '---', agentName, agentNumber, '---', source, '---']],
+                                                  columns=['CondoName', 'Price' , 'Area', 'PSF' , 'BedRooms', 'BathRooms', 'Type', 'Tenure', 'TOP', 'AgentName','AgentsNumber', 'PageNo', 'Source', 'AgentsComment']))
 
         except ValueError as e:
             print("Error in Listing", listing)

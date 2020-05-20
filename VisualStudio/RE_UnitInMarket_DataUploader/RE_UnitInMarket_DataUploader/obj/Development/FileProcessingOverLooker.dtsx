@@ -12,8 +12,8 @@
   DTS:LocaleID="18441"
   DTS:ObjectName="MysteryPackage"
   DTS:PackageType="5"
-  DTS:VersionBuild="20"
-  DTS:VersionGUID="{5EE8C376-E580-4960-8F56-E333B8A3585D}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{EE150A17-4E9C-41D8-A425-D89D016B989F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -352,8 +352,8 @@
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{871B7A0F-CB7F-431B-BEF2-CB755E52796A}"
-          DTS:ObjectName="{871B7A0F-CB7F-431B-BEF2-CB755E52796A}"
+          DTS:DTSID="{8A6CAF64-6798-4B50-9BE9-08A11556B8D7}"
+          DTS:ObjectName="{8A6CAF64-6798-4B50-9BE9-08A11556B8D7}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::FileName" />
       </DTS:ForEachVariableMappings>

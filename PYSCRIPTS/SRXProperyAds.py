@@ -5,8 +5,8 @@ import pandas as pd
 import sys
 from datetime import datetime
 
-PropAdDf = pd.DataFrame(columns=['CondoName', 'Price', 'Area', 'PSF', 'BedRooms', 'BathRooms', 'Type', 'Tenure', 'TOP',  'AgentsNumber', 'PageNo', 'Source', 'AgentsComment'])
-outputDir = "I:\\REAL_ESTATE_DATA\\UNITS_IN_MARKET"
+PropAdDf = pd.DataFrame(columns=['CondoName', 'Price' , 'Area', 'PSF' , 'BedRooms', 'BathRooms', 'Type', 'Tenure', 'TOP', 'AgentName','AgentsNumber', 'PageNo', 'Source', 'AgentsComment','WebSite'])
+outputDir = "I:\\REAL_ESTATE_DATA\\DATA_TO_PROCESS"
 # outputFileName = 'UnitsInMarket_'+ datetime.today().strftime('%d_%m_%Y')  + '.xlsx'
 outputFileName = 'UnitsInMarket_'+ datetime.today().strftime('%d_%m_%Y')  + '_SRX' + '.csv'
 
@@ -48,7 +48,7 @@ def extract(pattern, listing, type='str', imp='N', unwanted=[], splitter=[]):
     return result
 
 
-for i in range(1,50) :
+for i in range(1,21) :
     print("Scraping Web Page:", i)
     URL = 'https://www.srx.com.sg/search/sale/condo?page=' + str(i)
     try:
@@ -59,7 +59,7 @@ for i in range(1,50) :
         print("exception occured:", e)
         continue
     listings = re.sub('\s+', ' ', listings)
-    listings = listings.split('<div class="listingContainer">')
+    listings = listings.split('<div class="listingContainer ')
 
     if len(listings) < 2 :
         print("No more listing pages than page-", i)
@@ -74,12 +74,27 @@ for i in range(1,50) :
         type = 'Condo'
         (_,tenure, top) = extract('<div class="listingDetailType">(.*?)</div>', listing, type='str', imp='N', unwanted=['<span>', '</span>',' ', '&#8226', 'Condo' ], splitter=[';',3])
         top = top.split('<')[0]
+
         bedrooms = extract('<div class="listingDetailRoomNo">(.*?)</div>', listing, type='int', imp='N')
         bathrooms = extract('<div class="listingDetailToiletNo">(.*?)</div>', listing, type='int', imp='N')
+
+        agentsName = extract('<a href="/.*?" class="notranslate listingDetailAgentName">(.*?)</a>', listing, type='int', imp='N')
+        agentsName = re.sub("[^a-zA-Z0-9\s]","",agentsName)
+
         agentsNumber = extract('<input class="mobile-number-full" hidden="" value="(\d+)" ?/>', listing, type='str', imp='N')
         agentsComment = extract('<div class="listingDetailAgentAgencyText ">(.*?)</div>', listing,  type='str', imp='N')
-        # print(condoName, price, area,  bedrooms, bathrooms,tenure, TOP, agentsNumber, agentsComment)
-        dictionary = { 'CondoName': [condoName], 'Price': [price] , 'Area':[area], 'PSF': [psf], 'BedRooms': [bedrooms], 'BathRooms': bathrooms,  'Type': [type], 'Tenure': [tenure], 'TOP':[top] , 'AgentsNumber': [agentsNumber], 'PageNo': [i], 'Source': ['SRX'], 'AgentsComment': [agentsComment] }
+        agentsComment = re.sub("[^a-zA-Z0-9\s]","",agentsComment)
+
+        source = extract('<a href="(.*?)" class="listingDetailTitle', listing,  type='str', imp='N', splitter=['"',0])[0]
+        # if 'Marina One Residences' in condoName and '710' in area:
+        #     print(condoName, source)
+        #     print('<a href="(.*?)" class="listingDetailTitle " target= _blank>')
+        #     print('-'*30)
+        #     print(listing)
+        #     exit()
+        source = 'https://www.srx.com.sg' + source
+        #'                                                                                                                                                                                                                      'Source', 'AgentsComment'
+        dictionary = { 'CondoName': [condoName], 'Price': [price] , 'Area':[area], 'PSF': [psf], 'BedRooms': [bedrooms], 'BathRooms': bathrooms,  'Type': [type], 'Tenure': [tenure], 'TOP':[top] , 'AgentName': [agentsName], 'AgentsNumber': [agentsNumber], 'PageNo': [i], 'Source': [source], 'AgentsComment': [agentsComment], 'WebSite':['SRX'] }
         temp_df = pd.DataFrame.from_dict(dictionary)
         PropAdDf = PropAdDf.append(temp_df)
 # exit()

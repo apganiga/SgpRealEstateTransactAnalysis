@@ -18,7 +18,7 @@ if not os.path.exists(processedFilesDir):
 startPosString = 'listing-card listing-id-'
 endPosString = '/shortlist/delete/'
 
-condoDF = pd.DataFrame(columns=['CondoName', 'Price' , 'Area', 'PSF' , 'BedRooms', 'BathRooms', 'Type', 'Tenure', 'TOP', 'AgentName','AgentsNumber', 'PageNo', 'Source', 'AgentsComment','WebSite','File'])
+condoDF = pd.DataFrame(columns=['CondoName', 'Price' , 'Area', 'PSF' , 'BedRooms', 'BathRooms', 'Type', 'Tenure', 'TOP', 'AgentName','AgentsNumber', 'PageNo', 'Source', 'AgentsComment','WebSite'])
 condoDict = dict()
 clearVariable = [None]*10
 for file in filesToProcess[:]:
@@ -70,7 +70,7 @@ for file in filesToProcess[:]:
 
 
             condoDF = condoDF.append(pd.DataFrame([[condoName, price , area,  psf, bedrooms, bathrooms, 'Condo', '---', '---', agentName, agentNumber, '---', source, '---', 'PG', file]],
-                                                  columns=['CondoName', 'Price' , 'Area', 'PSF' , 'BedRooms', 'BathRooms', 'Type', 'Tenure', 'TOP', 'AgentName','AgentsNumber', 'PageNo', 'Source', 'AgentsComment','WebSite' ,'File']))
+                                                  columns=['CondoName', 'Price' , 'Area', 'PSF' , 'BedRooms', 'BathRooms', 'Type', 'Tenure', 'TOP', 'AgentName','AgentsNumber', 'PageNo', 'Source', 'AgentsComment','WebSite']))
         except ValueError as e:
             print("Error in Listing", listing)
     shutil.move(file, processedFilesDir)

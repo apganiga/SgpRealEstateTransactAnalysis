@@ -69,7 +69,7 @@ for file in filesToProcess[:]:
             agentNumber = dataChunkForThisCondo[agentPos: agentPos+20].split('<')[0].replace(' ','').replace('+65','')
 
 
-            condoDF = condoDF.append(pd.DataFrame([[condoName, price , area,  psf, bedrooms, bathrooms, 'Condo', '---', '---', agentName, agentNumber, '---', source, '---', 'PG', file]],
+            condoDF = condoDF.append(pd.DataFrame([[condoName, price , area,  psf, bedrooms, bathrooms, 'Condo', '---', '---', agentName, agentNumber, '---', source, '---', 'PG']],
                                                   columns=['CondoName', 'Price' , 'Area', 'PSF' , 'BedRooms', 'BathRooms', 'Type', 'Tenure', 'TOP', 'AgentName','AgentsNumber', 'PageNo', 'Source', 'AgentsComment','WebSite']))
         except ValueError as e:
             print("Error in Listing", listing)

@@ -12,7 +12,7 @@ URL_token = "https://www.ura.gov.sg/uraDataService/insertNewToken.action"
 tokenResponse = requests.get(URL_token, headers={'AccessKey':myAccessKey})
 mytoken= (tokenResponse.text.split(":"))[3].split('}')[0].replace('"','')
 
-outputDir = 'I:\\REAL_ESTATE_DATA\\URA_TRANSACTIONS'
+outputDir = 'I:\\REAL_ESTATE_DATA\\DATA_TO_PROCESS'
 
 for i in range(1,5) :
     transactionFileName = 'TransactionData_' + datetime.today().strftime('%d_%m_%Y') + '_' + str(i) + '.csv'

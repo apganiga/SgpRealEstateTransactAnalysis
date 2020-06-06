@@ -12,8 +12,8 @@
   DTS:LocaleID="18441"
   DTS:ObjectName="MysteryPackage"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{EE150A17-4E9C-41D8-A425-D89D016B989F}">
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{3FC4BC7C-28B4-467E-A371-6F6937763E2D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -304,6 +304,7 @@
       DTS:DTSID="{ed3f85ed-986a-4124-8fb2-bfc41d247a8b}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
+      DTS:MaxErrorCount="100"
       DTS:ObjectName="RECORD NEW FILE IN FOLDER">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachFileEnumerator"
@@ -330,7 +331,9 @@
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{d0e85803-9cd5-457f-bfed-82e12c35b3a3}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:FailPackageOnFailure="True"
           DTS:LocaleID="-1"
+          DTS:MaxErrorCount="100"
           DTS:ObjectName="Execute SQL Task"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
@@ -338,7 +341,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{067FF5F3-0315-4054-9486-1DB9BE7B7298}"
-              SQLTask:SqlStatementSource="INSERT INTO [dbo].[FILE_PROCESSED] ([FileName], [Loaded] ) VALUES (?, 'N')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="INSERT INTO [REAL_ESTATE].[dbo].[FILE_PROCESSED] ([FileName], [Loaded] ) VALUES (?, 'N')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
                 SQLTask:DtsVariableName="User::FileName"

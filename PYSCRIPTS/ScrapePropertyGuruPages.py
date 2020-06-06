@@ -14,8 +14,9 @@ PREVIOUS_BROWSER_CLOSE=288,22
 URLs = [('PG','https://www.propertyguru.com.sg/property-for-sale/{X}?property_type=N&property_type_code%5B0%5D=APT&property_type_code%5B1%5D=CLUS&property_type_code%5B2%5D=CONDO&property_type_code%5B3%5D=EXCON&property_type_code%5B4%5D=WALK'),
        ('AUC', 'https://www.propertyguru.com.sg/property-for-sale/{X}?freetext=Bank+Auction&property_type=N&property_type_code%5B0%5D=APT&property_type_code%5B1%5D=CLUS&property_type_code%5B2%5D=CONDO&property_type_code%5B3%5D=EXCON&property_type_code%5B4%5D=WALK')]
 
+
 tempSaveLocation="C:\\Users\\User\\Downloads"
-fileName = 'view-source*'
+fileName = '*view-source*'
 oldFilesList = glob.glob(tempSaveLocation + "\\" + fileName )
 for file in oldFilesList:
     print("Removing File:", file)
@@ -24,7 +25,7 @@ for file in oldFilesList:
 for url in URLs[:]:
     scrapeType, urlTemplate = url
     counter= 1
-    for i in range(1,51):
+    for i in range(1,4):
         url = urlTemplate.replace('{X}', str(i))
         print("url=", url)
         webbrowser.open(url)

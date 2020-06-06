@@ -48,7 +48,7 @@ def extract(pattern, listing, type='str', imp='N', unwanted=[], splitter=[]):
     return result
 
 
-for i in range(1,4) :
+for i in range(1,21) :
     print("Scraping Web Page:", i)
     URL = 'https://www.srx.com.sg/search/sale/condo?page=' + str(i)
     try:

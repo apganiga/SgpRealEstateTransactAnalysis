@@ -11,9 +11,9 @@ interval = 2
 CLOSE_BROWSER_POS=589,19
 PREVIOUS_BROWSER_CLOSE=288,22
 
-URLs = [('PG','https://www.propertyguru.com.sg/property-for-sale/{X}?property_type=N&property_type_code%5B0%5D=APT&property_type_code%5B1%5D=CLUS&property_type_code%5B2%5D=CONDO&property_type_code%5B3%5D=EXCON&property_type_code%5B4%5D=WALK', 10),
-       ('AUC', 'https://www.propertyguru.com.sg/property-for-sale/{X}?freetext=Bank+Auction&property_type=N&property_type_code%5B0%5D=APT&property_type_code%5B1%5D=CLUS&property_type_code%5B2%5D=CONDO&property_type_code%5B3%5D=EXCON&property_type_code%5B4%5D=WALK',10),
-       ('PFS', 'https://www.propertyguru.com.sg/property-for-sale/{X}?freetext=fire+sale&property_type=N&property_type_code%5B0%5D=APT&property_type_code%5B1%5D=CLUS&property_type_code%5B2%5D=CONDO&property_type_code%5B3%5D=EXCON&property_type_code%5B4%5D=WALK',5)]
+URLs = [('PG','https://www.propertyguru.com.sg/property-for-sale/{X}?property_type=N&property_type_code%5B0%5D=APT&property_type_code%5B1%5D=CLUS&property_type_code%5B2%5D=CONDO&property_type_code%5B3%5D=EXCON&property_type_code%5B4%5D=WALK', 4),
+       ('AUC', 'https://www.propertyguru.com.sg/property-for-sale/{X}?freetext=Bank+Auction&property_type=N&property_type_code%5B0%5D=APT&property_type_code%5B1%5D=CLUS&property_type_code%5B2%5D=CONDO&property_type_code%5B3%5D=EXCON&property_type_code%5B4%5D=WALK',4),
+       ('PFS', 'https://www.propertyguru.com.sg/property-for-sale/{X}?freetext=fire+sale&property_type=N&property_type_code%5B0%5D=APT&property_type_code%5B1%5D=CLUS&property_type_code%5B2%5D=CONDO&property_type_code%5B3%5D=EXCON&property_type_code%5B4%5D=WALK',2)]
 #PG = Prop Guru Normal sale
 #AUC = Auction sale
 #PFS + Prop Guru Fire Sale
@@ -49,6 +49,9 @@ for url in URLs[:]:
             time.sleep(2)
 
     gui.click(CLOSE_BROWSER_POS)
+    time.sleep(2)
+    gui.click(CLOSE_BROWSER_POS)
+    time.sleep(2)
     gui.click(CLOSE_BROWSER_POS)
     finalDest = "I:\\REAL_ESTATE_DATA\\AUTO_GUI_STAGING"
     FilesList = glob.glob(tempSaveLocation + "\\" + fileName )

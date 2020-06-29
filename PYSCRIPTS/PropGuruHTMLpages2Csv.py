@@ -6,15 +6,15 @@ from datetime import datetime
 import os
 import shutil
 
-fileLocation = "I:\\REAL_ESTATE_DATA\\AUTO_GUI_STAGING"
-outputDir = "I:\\REAL_ESTATE_DATA\\DATA_TO_PROCESS"
+fileLocation = "I:/REAL_ESTATE_DATA/AUTO_GUI_STAGING"
+outputDir = "I:/REAL_ESTATE_DATA/DATA_TO_PROCESS"
 
 for filetype in ['PG', 'AUC', 'PFS']:
     filesToProcess = glob.glob(fileLocation + "\\" + filetype + "*.html")
 
     outputFileName = 'UnitsInMarket_' + filetype + '_' + datetime.today().strftime('%d_%m_%Y')  + '_' + filetype + '.csv'
 
-    processedFilesDir = "I:\\REAL_ESTATE_DATA\\AUTO_GUI_STAGING\\PROCESSED_" + filetype + '_' + datetime.today().strftime('%d_%m_%Y')
+    processedFilesDir = "I:\\REAL_ESTATE_DATA\\AUTO_GUI_STAGING\\PROCESSED_" + filetype + '_' + datetime.today().strftime('%d_%m_%Y') + '\\'
     if not os.path.exists(processedFilesDir):
         os.makedirs(processedFilesDir)
 
@@ -84,9 +84,19 @@ for filetype in ['PG', 'AUC', 'PFS']:
             except ValueError as e:
                 print("Error in Listing", listing)
                 continue
-        shutil.move(file, processedFilesDir)
+        if not os.path.exists(processedFilesDir):
+            print("processedFilesDir=", processedFilesDir, "exists... ")
+            # try:
+            #     os.remove(processedFilesDir)
+            # except Exception as e:
+            #     print(e)
+            #     print("Error moving file: ", file, processedFilesDir)
+            #     exit()
+
+        shutil.move(file, processedFilesDir + os.path.basename(file))
     print(condoDF)
     condoDF = condoDF.set_index('CondoName')
     print("Writting to ", outputDir , "\\" , outputFileName, "...")
+
     condoDF.to_csv(outputDir + "\\" + outputFileName )
 

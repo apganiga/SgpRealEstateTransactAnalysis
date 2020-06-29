@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>RE_UnitInMarket_DataUploader</Name>
-    <LastWriteTime>2020-05-30T14:16:40.3683901Z</LastWriteTime>
+    <LastWriteTime>2020-06-23T11:44:30.7776619Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -18,17 +18,27 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Load_TransactionData_2_Table.dtsx</Name>
-      <LastWriteTime>2020-05-30T06:55:52.7722419Z</LastWriteTime>
+      <LastWriteTime>2020-06-06T14:34:31.2133545Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Load_UnitsInMarketData_2_Table.dtsx</Name>
-      <LastWriteTime>2020-06-04T15:29:01.9183906Z</LastWriteTime>
+      <LastWriteTime>2020-06-23T09:30:49.2886125Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Rpt_DiscountedUnitsExtract.dtsx</Name>
-      <LastWriteTime>2020-06-01T16:54:14.6784321Z</LastWriteTime>
+      <LastWriteTime>2020-06-23T11:45:14.6357424Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Load_CondoData_2_Table.dtsx</Name>
+      <LastWriteTime>2020-06-07T02:22:02.7777051Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>SingaporeExpatsCondoList_2_table.dtsx</Name>
+      <LastWriteTime>2020-06-10T01:23:11.9200896Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

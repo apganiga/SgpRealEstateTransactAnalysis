@@ -11,8 +11,8 @@
   DTS:LocaleID="18441"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="56"
-  DTS:VersionGUID="{99E82CF5-3A4A-44B0-B151-626AFEF8BC61}">
+  DTS:VersionBuild="59"
+  DTS:VersionGUID="{1C3C5F2C-32CB-4487-99F8-1CF7ADF445EA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -849,6 +849,31 @@
                       refId="Package\Load Unit In Market Data One By One\LoadDataToActualTable\Derived Column 1.Inputs[Derived Column Input]"
                       description="Input to the Derived Column Transformation"
                       name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load Unit In Market Data One By One\LoadDataToActualTable\Derived Column 1.Inputs[Derived Column Input].Columns[o_AREA]"
+                          cachedDataType="i2"
+                          cachedName="o_AREA"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Load Unit In Market Data One By One\LoadDataToActualTable\Union All.Outputs[Union All Output 1].Columns[o_AREA]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[REPLACENULL](#{Package\Load Unit In Market Data One By One\LoadDataToActualTable\Union All.Outputs[Union All Output 1].Columns[o_AREA]},-9999)</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">REPLACENULL(o_AREA,-9999)</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
@@ -863,7 +888,6 @@
                         <outputColumn
                           refId="Package\Load Unit In Market Data One By One\LoadDataToActualTable\Derived Column 1.Outputs[Derived Column Output].Columns[DATE_CAPTURED]"
                           dataType="dbDate"
-                          description="DATE_CAPTURED"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           lineageId="Package\Load Unit In Market Data One By One\LoadDataToActualTable\Derived Column 1.Outputs[Derived Column Output].Columns[DATE_CAPTURED]"
@@ -4726,8 +4750,8 @@ and area &lt; 9000</property>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{F9BAEB10-5E2F-4822-AC7F-FCBA36148627}"
-          DTS:ObjectName="{F9BAEB10-5E2F-4822-AC7F-FCBA36148627}"
+          DTS:DTSID="{F5347D97-2C05-4E11-A54D-0699C0C0A92E}"
+          DTS:ObjectName="{F5347D97-2C05-4E11-A54D-0699C0C0A92E}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::FileToProcess" />
       </DTS:ForEachVariableMappings>

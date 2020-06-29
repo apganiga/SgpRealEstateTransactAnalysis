@@ -1,0 +1,1522 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/6/2020 10:33:23 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ANANTHIDEAPAD"
+  DTS:CreatorName="ANANTHIDEAPAD\User"
+  DTS:DTSID="{50C9FBA2-2C9E-4B8C-8FDD-6F1E7D3F0B3E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.94"
+  DTS:LocaleID="18441"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{ADBF8EF4-FF61-4749-B00C-7B7D0C163920}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CondosData_CSV]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{CC0D1483-2E82-4BC1-83A2-FFDAF458C3AF}"
+      DTS:ObjectName="CondosData_CSV">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::FileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="18441"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CondoName"
+              DTS:DTSID="{9F27D1EC-6C8A-46DF-A758-84C12330A92B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Street"
+              DTS:DTSID="{A19783D9-414E-43F1-A634-57E723FDAFF9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MarketSegment"
+              DTS:DTSID="{6EACD08E-467A-49AE-AC15-571B1C4DBB71}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="District"
+              DTS:DTSID="{08C0EAD5-627E-4DC0-8803-7836B8FCDE65}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PropertyType"
+              DTS:DTSID="{20F42EAD-F55D-4707-8C67-B813203A06BD}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F830AAB1-AC6A-4254-A6B2-0C990042441A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{929C409F-825B-411E-9A33-D4659E5CFAE1}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="FilesToProcess">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{209A2544-5C86-41F5-8AB0-0CD95528AA01}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A46F0585-8140-4C3C-BD6D-02536E59B236}"
+          SQLTask:SqlStatementSource="select FileName from [REAL_ESTATE].[dbo].[FILE_PROCESSED]&#xA;WHERE FileName Like '%CondoData%' AND &#xA;Loaded = 'N'"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::FilesToProcess" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{FC6ECA86-15EA-4C1F-A247-3499CB9874BC}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop Container">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:DTSID="{B12F7F1E-07FF-47F5-88F3-8E9B1DB56F77}"
+        DTS:ObjectName="{B12F7F1E-07FF-47F5-88F3-8E9B1DB56F77}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::FilesToProcess" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{A4F09133-6333-4301-9C8B-FF1E94E92C25}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="LOAD_TO_ACTUAL_TABLE"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[CONDOS]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{A46F0585-8140-4C3C-BD6D-02536E59B236}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.REAL_ESTATE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CONDO_NAME]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="150"
+                          cachedName="CONDO_NAME"
+                          externalMetadataColumnId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CONDO_NAME]"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONDO_NAME]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ADDRESS]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="ADDRESS"
+                          externalMetadataColumnId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESS]"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[ADDRESS]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MARKET_SEGMENT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="MARKET_SEGMENT"
+                          externalMetadataColumnId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MARKET_SEGMENT]"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[MARKET_SEGMENT]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PROPERTY_TYPE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="25"
+                          cachedName="PROPERTY_TYPE"
+                          externalMetadataColumnId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PROPERTY_TYPE]"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[PROPERTY_TYPE]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DISTRICT_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="4"
+                          cachedName="DISTRICT_ID"
+                          externalMetadataColumnId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DISTRICT_ID]"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[DISTRICT_ID]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TENURE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="TENURE"
+                          externalMetadataColumnId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TENURE]"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[TENURE]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TOP_]"
+                          cachedDataType="dbDate"
+                          cachedName="TOP_"
+                          externalMetadataColumnId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[_TOP]"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOP_]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CONDO_NAME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          name="CONDO_NAME" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="ADDRESS" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[_TOP]"
+                          dataType="dbDate"
+                          name="_TOP" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TENURE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          name="TENURE" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MARKET_SEGMENT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          name="MARKET_SEGMENT" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PROPERTY_TYPE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="PROPERTY_TYPE" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DISTRICT_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="DISTRICT_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DEVELOPER]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="DEVELOPER" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[START_DATE]"
+                          dataType="dbDate"
+                          name="START_DATE" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[END_DATE]"
+                          dataType="dbDate"
+                          name="END_DATE" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VALID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="VALID" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT A.[CONDO_NAME]
+      ,A.[ADDRESS]
+	  ,cast(REPLACE(REPLACE(B.TOP_,'Built-',''),'TOP-','') as date) as "TOP_"
+	  ,B.TENURE
+      ,A.[MARKET_SEGMENT]
+      ,A.[PROPERTY_TYPE]
+      ,A.[DISTRICT_ID]
+  FROM [REAL_ESTATE].[stg].[STG_CONDOS] A, 
+  [REAL_ESTATE].[dbo].[UNIT_IN_MARKET] B
+  WHERE A.CONDO_NAME = B.CONDO_NAME
+  and B.TOP_ &lt;&gt; '---'
+  AND B.TOP_ &lt;&gt; ''
+AND A.CONDO_NAME NOT IN ( SELECT DISTINCT CONDO_NAME FROM dbo.CONDOS )</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{A46F0585-8140-4C3C-BD6D-02536E59B236}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.REAL_ESTATE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONDO_NAME]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CONDO_NAME]"
+                          length="150"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONDO_NAME]"
+                          name="CONDO_NAME"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[ADDRESS]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ADDRESS]"
+                          length="250"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[ADDRESS]"
+                          name="ADDRESS"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[MARKET_SEGMENT]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MARKET_SEGMENT]"
+                          length="3"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[MARKET_SEGMENT]"
+                          name="MARKET_SEGMENT"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[PROPERTY_TYPE]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PROPERTY_TYPE]"
+                          length="25"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[PROPERTY_TYPE]"
+                          name="PROPERTY_TYPE"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[DISTRICT_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DISTRICT_ID]"
+                          length="4"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[DISTRICT_ID]"
+                          name="DISTRICT_ID"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOP_]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TOP_]"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOP_]"
+                          name="TOP_"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[TENURE]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TENURE]"
+                          length="20"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].Columns[TENURE]"
+                          name="TENURE"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CONDO_NAME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          name="CONDO_NAME" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ADDRESS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="ADDRESS" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MARKET_SEGMENT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          name="MARKET_SEGMENT" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PROPERTY_TYPE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="PROPERTY_TYPE" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DISTRICT_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="4"
+                          name="DISTRICT_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TOP_]"
+                          dataType="dbDate"
+                          name="TOP_" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TENURE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="TENURE" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CONDO_NAME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CONDO_NAME]"
+                          name="CONDO_NAME" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ADDRESS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ADDRESS]"
+                          name="ADDRESS" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TOP_]"
+                          dataType="dbDate"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TOP_]"
+                          name="TOP_" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TENURE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TENURE]"
+                          name="TENURE" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MARKET_SEGMENT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MARKET_SEGMENT]"
+                          name="MARKET_SEGMENT" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PROPERTY_TYPE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PROPERTY_TYPE]"
+                          name="PROPERTY_TYPE" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DISTRICT_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="4"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DISTRICT_ID]"
+                          name="DISTRICT_ID" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE.Paths[OLE DB Source Output]"
+                  endId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{319E5311-7EAE-47A3-971A-D08DC1FFFB08}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="LOAD_TO_STAGING_TABLE">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="18441"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CondosData_CSV]"
+                      connectionManagerRefId="Package.ConnectionManagers[CondosData_CSV]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].Columns[CondoName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CondoName]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].Columns[CondoName]"
+                          name="CondoName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].Columns[Street]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Street]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].Columns[Street]"
+                          name="Street"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].Columns[MarketSegment]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MarketSegment]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].Columns[MarketSegment]"
+                          name="MarketSegment"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].Columns[District]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[District]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].Columns[District]"
+                          name="District"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].Columns[PropertyType]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PropertyType]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].Columns[PropertyType]"
+                          name="PropertyType"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CondoName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CondoName" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Street]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Street" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MarketSegment]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="MarketSegment" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[District]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="District" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PropertyType]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PropertyType" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stg].[STG_CONDOS]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{A46F0585-8140-4C3C-BD6D-02536E59B236}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.REAL_ESTATE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CondoName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CondoName"
+                          externalMetadataColumnId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CONDO_NAME]"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].Columns[CondoName]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Street]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Street"
+                          externalMetadataColumnId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESS]"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].Columns[Street]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[District]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="District"
+                          externalMetadataColumnId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DISTRICT_ID]"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].Columns[District]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MarketSegment]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="MarketSegment"
+                          externalMetadataColumnId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MARKET_SEGMENT]"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].Columns[MarketSegment]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PropertyType]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="PropertyType"
+                          externalMetadataColumnId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PROPERTY_TYPE]"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output].Columns[PropertyType]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CONDO_NAME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          name="CONDO_NAME" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="ADDRESS" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DISTRICT_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="4"
+                          name="DISTRICT_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MARKET_SEGMENT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          name="MARKET_SEGMENT" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PROPERTY_TYPE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="PROPERTY_TYPE" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE.Paths[Flat File Source Output]"
+                  endId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\MARK_PROCESSED_FILE_ON_AUDIT_TABLE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{413ecc06-41bc-47ab-9efa-3565c1f0ad30}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="MARK_PROCESSED_FILE_ON_AUDIT_TABLE"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A46F0585-8140-4C3C-BD6D-02536E59B236}"
+              SQLTask:SqlStatementSource="UPDATE [dbo].[FILE_PROCESSED]&#xA;SET [Loaded] = 'Y' ,&#xA;[LoadedTimeStamp] = GETDATE()&#xA;WHERE &#xA;[FileName] = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::FileName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Move_LoadedFiles"
+          DTS:CreationName="Microsoft.ExecuteProcess"
+          DTS:Description="Execute Process Task"
+          DTS:DTSID="{7dd451a9-abc9-4017-9e4d-e7d8255cacce}"
+          DTS:ExecutableType="Microsoft.ExecuteProcess"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Move_LoadedFiles"
+          DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="Arguments">@[User::FileName]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <ExecuteProcessData
+              Executable="G:\WEBSCRAP\REAL_ESTATE\Move_LoadedFiles.bat" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\TRUNCCATE_STAGING_TABLE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{A8427476-25A8-49EE-AD9F-83847E16CC92}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRUNCCATE_STAGING_TABLE"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A46F0585-8140-4C3C-BD6D-02536E59B236}"
+              SQLTask:SqlStatementSource="DELETE FROM  [REAL_ESTATE].[stg].[STG_CONDOS]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{9BFD4260-992B-4564-A5ED-E5CE6C85051B}"
+          DTS:From="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{EE199FDF-CCAB-4257-A3F8-51137D47636B}"
+          DTS:From="Package\Foreach Loop Container\TRUNCCATE_STAGING_TABLE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{C9C2B9CD-7024-4CCA-84A7-0882CDE03151}"
+          DTS:From="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Foreach Loop Container\MARK_PROCESSED_FILE_ON_AUDIT_TABLE" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{08B53039-F062-463E-B645-D45F3747D9E4}"
+          DTS:From="Package\Foreach Loop Container\MARK_PROCESSED_FILE_ON_AUDIT_TABLE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Foreach Loop Container\Move_LoadedFiles" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{D19874D2-ABEF-46D4-AF86-4B4D8FD5E9B7}"
+          DTS:ObjectName="{D19874D2-ABEF-46D4-AF86-4B4D8FD5E9B7}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::FileName" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{82C102EE-B51E-4960-B61B-E9A57FB48B55}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Foreach Loop Container" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Execute SQL Task"
+          TopLeft="182.666659408146,38.3466668760512" />
+        <NodeLayout
+          Size="212,41.6"
+          Id="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE"
+          TopLeft="136.16666147444,194.933337190416" />
+        <NodeLayout
+          Size="218.4,41.6"
+          Id="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE"
+          TopLeft="143.666661394967,112.380003157299" />
+        <NodeLayout
+          Size="233.6,41.6"
+          Id="Package\Foreach Loop Container\TRUNCCATE_STAGING_TABLE"
+          TopLeft="118.166662189696,20.9066691407099" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          TopLeft="252.866661394967,153.980003157299">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.6999999205267,40.9533340331175"
+              Start="0,0"
+              End="-10.6999999205267,33.4533340331175">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.4766670165587" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.4766670165587"
+                    Point2="0,20.4766670165587"
+                    Point3="-4,20.4766670165587" />
+                  <mssgle:LineSegment
+                    End="-6.69999992052669,20.4766670165587" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.69999992052669,20.4766670165587"
+                    Point2="-10.6999999205267,20.4766670165587"
+                    Point3="-10.6999999205267,24.4766670165587" />
+                  <mssgle:LineSegment
+                    End="-10.6999999205267,33.4533340331175" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="234.966662189696,62.5066691407099">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17.8999992052711,49.8733340165887"
+              Start="0,0"
+              End="17.8999992052711,42.3733340165887">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.9366670082944" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.9366670082944"
+                    Point2="0,24.9366670082944"
+                    Point3="4,24.9366670082944" />
+                  <mssgle:LineSegment
+                    End="13.8999992052711,24.9366670082944" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.8999992052711,24.9366670082944"
+                    Point2="17.8999992052711,24.9366670082944"
+                    Point3="17.8999992052711,28.9366670082944" />
+                  <mssgle:LineSegment
+                    End="17.8999992052711,42.3733340165887" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="304,41.6"
+          Id="Package\Foreach Loop Container\MARK_PROCESSED_FILE_ON_AUDIT_TABLE"
+          TopLeft="116.93332461781,282.34667009947" />
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\Foreach Loop Container\Move_LoadedFiles"
+          TopLeft="167.066661077076,354.506670463138" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
+          TopLeft="242.16666147444,236.533337190416">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26.7666631433701,45.8133329090543"
+              Start="0,0"
+              End="26.7666631433701,38.3133329090543">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.9066664545272" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.9066664545272"
+                    Point2="0,22.9066664545272"
+                    Point3="4,22.9066664545272" />
+                  <mssgle:LineSegment
+                    End="22.7666631433701,22.9066664545272" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.7666631433701,22.9066664545272"
+                    Point2="26.7666631433701,22.9066664545272"
+                    Point3="26.7666631433701,26.9066664545272" />
+                  <mssgle:LineSegment
+                    End="26.7666631433701,38.3133329090543" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 3]"
+          TopLeft="268.93332461781,323.94667009947">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-18.6666635407339,30.5600003636681"
+              Start="0,0"
+              End="-18.6666635407339,23.0600003636681">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.280000181834" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.280000181834"
+                    Point2="0,15.280000181834"
+                    Point3="-4,15.280000181834" />
+                  <mssgle:LineSegment
+                    End="-14.6666635407339,15.280000181834" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-14.6666635407339,15.280000181834"
+                    Point2="-18.6666635407339,15.280000181834"
+                    Point3="-18.6666635407339,19.280000181834" />
+                  <mssgle:LineSegment
+                    End="-18.6666635407339,23.0600003636681" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="474.4,451.2"
+          Size="474.4,494.4"
+          Id="Package\Foreach Loop Container"
+          TopLeft="102.66666258706,106.773334181892" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="265.066659408146,79.9466668760512">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74.800003178914,26.8266673058408"
+              Start="0,0"
+              End="74.800003178914,19.3266673058408">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.41333365292039" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.41333365292039"
+                    Point2="0,13.4133336529204"
+                    Point3="4,13.4133336529204" />
+                  <mssgle:LineSegment
+                    End="70.800003178914,13.4133336529204" />
+                  <mssgle:CubicBezierSegment
+                    Point1="70.800003178914,13.4133336529204"
+                    Point2="74.800003178914,13.4133336529204"
+                    Point3="74.800003178914,17.4133336529204" />
+                  <mssgle:LineSegment
+                    End="74.800003178914,19.3266673058408" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source"
+          TopLeft="244.8,34.4" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination"
+          TopLeft="240.8,158.4" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE.Paths[OLE DB Source Output]"
+          TopLeft="323.6,76">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,82.4"
+              Start="0,0"
+              End="0,74.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,74.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\LOAD_TO_ACTUAL_TABLE\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination"
+          TopLeft="281.6,240" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\Flat File Source"
+          TopLeft="257.200001986821,48.3733333553738" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE.Paths[Flat File Source Output]"
+          TopLeft="332.800001986821,89.9733333553738">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="34.3999980131787,150.026666644626"
+              Start="0,0"
+              End="34.3999980131787,142.526666644626">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.0133333223131" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,71.0133333223131"
+                    Point2="0,75.0133333223131"
+                    Point3="4,75.0133333223131" />
+                  <mssgle:LineSegment
+                    End="30.3999980131787,75.0133333223131" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30.3999980131787,75.0133333223131"
+                    Point2="34.3999980131787,75.0133333223131"
+                    Point3="34.3999980131787,79.0133333223131" />
+                  <mssgle:LineSegment
+                    End="34.3999980131787,142.526666644626" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\LOAD_TO_STAGING_TABLE\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

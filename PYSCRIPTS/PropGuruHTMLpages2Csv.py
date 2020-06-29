@@ -9,12 +9,12 @@ import shutil
 fileLocation = "I:\\REAL_ESTATE_DATA\\AUTO_GUI_STAGING"
 outputDir = "I:\\REAL_ESTATE_DATA\\DATA_TO_PROCESS"
 
-for filetype in ['PG', 'AUC']:
+for filetype in ['PG', 'AUC', 'PFS']:
     filesToProcess = glob.glob(fileLocation + "\\" + filetype + "*.html")
 
-    outputFileName = 'UnitsInMarket_'+ datetime.today().strftime('%d_%m_%Y')  + '_' + filetype + '.csv'
+    outputFileName = 'UnitsInMarket_' + filetype + '_' + datetime.today().strftime('%d_%m_%Y')  + '_' + filetype + '.csv'
 
-    processedFilesDir = "I:\\REAL_ESTATE_DATA\\AUTO_GUI_STAGING\\PROCESSED_" + datetime.today().strftime('%d_%m_%Y')
+    processedFilesDir = "I:\\REAL_ESTATE_DATA\\AUTO_GUI_STAGING\\PROCESSED_" + filetype + '_' + datetime.today().strftime('%d_%m_%Y')
     if not os.path.exists(processedFilesDir):
         os.makedirs(processedFilesDir)
 

@@ -11,8 +11,8 @@
   DTS:LocaleID="18441"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="76"
-  DTS:VersionGUID="{57BE8B86-7AF9-4C09-84BD-C304B5EF519C}">
+  DTS:VersionBuild="77"
+  DTS:VersionGUID="{EDE4DB22-4690-4768-9D6D-44632B0BF2D7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -336,28 +336,6 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\GET_FILES_TO_LOAD"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{be1cf70f-c873-4d7c-aa9d-bdff07901170}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="GET_FILES_TO_LOAD"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{EA9EF79C-3480-4D37-BE92-CFDB0ED6FE5A}"
-          SQLTask:SqlStatementSource="SELECT TOP 1 [FileName] FROM [dbo].[FILE_PROCESSED]&#xA;WHERE [Loaded] = 'N'&#xA;And FileName Like '%TransactionData_%'"
-          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ResultBinding
-            SQLTask:ResultName="0"
-            SQLTask:DtsVariableName="User::objFilesListToProcess" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
       DTS:refId="Package\GET_FILES_TO_LOAD 1"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -366,7 +344,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="GET_FILES_TO_LOAD 1"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -408,7 +386,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Execute SQL Task"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3072,7 +3050,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="MARK_PROCESSED_FILE_ON_AUDIT_TABLE"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3096,7 +3074,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Move_LoadedFiles"
           DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:PropertyExpression
             DTS:Name="Arguments">@[User::FileToProcess]</DTS:PropertyExpression>
@@ -3172,10 +3150,6 @@
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="188.8,41.6"
-          Id="Package\GET_FILES_TO_LOAD"
-          TopLeft="313.999987522761,267.626668793572" />
         <NodeLayout
           Size="188.8,41.6"
           Id="Package\GET_FILES_TO_LOAD 1"
@@ -3326,9 +3300,9 @@
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="472.8,379.2"
-          Size="472.8,422.4"
+          Size="472.8,43.2"
           Id="Package\LOAD_TRANSACTION_DATA_TO_STAGING_ONE_BY_ONE"
           TopLeft="78.6666635407343,123.459998958588" />
         <EdgeLayout

@@ -11,75 +11,188 @@
   DTS:LocaleID="18441"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{FC085497-A127-405E-97A2-0D1BEB550C8B}">
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{8E188934-4D41-41CB-99C7-89E4087C1C90}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Discounted_PSF_CSV]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{2D8C08DB-0D12-4DC3-A3B3-3DF4B03BBD1D}"
+      DTS:ObjectName="Discounted_PSF_CSV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="18441"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="I:\REAL_ESTATE_DATA\REPORTS\UNITS_DISCOUNTED_PSF_IN_A_CONDO.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CONDO_NAME"
+              DTS:DTSID="{35081F4E-3AD5-4608-BFEC-48FB37D00046}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AREA"
+              DTS:DTSID="{4F81214A-ADCC-4524-AB32-B3A73E903A6D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AskingPrice"
+              DTS:DTSID="{AC0176A4-2F13-4113-89AA-E759D848BAA7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="psf"
+              DTS:DTSID="{699DF743-8278-44D9-958E-B664E3598ECF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="avgpsf"
+              DTS:DTSID="{89DD66D9-E9AF-45F8-9D7C-A8C59624F75D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PSF Diff"
+              DTS:DTSID="{C828D28A-527B-4E29-A6BB-815C64FF7A3E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="district_name"
+              DTS:DTSID="{A5FE24D2-CAA3-4C68-BA09-29A1FCC0E39E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AgeCategory"
+              DTS:DTSID="{A61AE521-A80E-4F31-9314-C67B43719590}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="type_Of_Sale"
+              DTS:DTSID="{2C8DD3A9-521D-46F5-A0BE-385DEBF82460}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SOURCE"
+              DTS:DTSID="{6C338971-143B-4E33-AE0B-C3AD482E0DF1}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{EC6033FE-D66D-4A2C-9379-2F93CDB7CD27}"
+      DTS:DTSID="{C492309A-508D-461A-9A90-E907E2193A04}"
       DTS:ObjectName="Flat File Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
           DTS:LocaleID="18441"
           DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="I:\REAL_ESTATE_DATA\REPORTS\UNITS_BIG_DISCOUNTED.csv">
+          DTS:ConnectionString="I:\REAL_ESTATE_DATA\REPORTS\DISCOUNTED_BIG_UNITS.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
+              DTS:MaximumWidth="150"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CONDO_NAME"
-              DTS:DTSID="{AFC85544-C858-4FA8-8196-5A000C9C498C}"
+              DTS:DTSID="{68FB4DBE-9989-483A-B356-EF6C0B62F79F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="2"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="AREA"
-              DTS:DTSID="{55B6842B-D650-4F38-9C15-75277D61DFAA}"
+              DTS:DTSID="{B1140173-F08B-4297-8653-AC089E6DF9C1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="3"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="AskingPrice"
-              DTS:DTSID="{35B03093-7A5B-4625-B233-506A90B7BCE8}"
+              DTS:DTSID="{98E7830A-FE57-4E5E-B469-E9400692BB31}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="3"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="TransactedArea"
-              DTS:DTSID="{44420135-5C46-47F7-977E-62C9D5FC2A21}"
+              DTS:DTSID="{3C38F5DC-1AEB-4100-AE74-717D9A0599E7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="3"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="YEAR"
-              DTS:DTSID="{A0F60B0E-2E19-4C61-990B-3050F00B482E}"
+              DTS:DTSID="{5D9F6AB6-53F6-414B-B9DA-008DE96E266D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="3"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="MinTransactedPrice"
-              DTS:DTSID="{661726C2-BBA4-471D-B2E1-4BC81B049F38}"
+              DTS:DTSID="{A6040C6F-B164-4C91-91AE-41834E0C9ACF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -88,15 +201,16 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SOURCE"
-              DTS:DTSID="{6064D3F3-9E21-47F6-95E5-7D51B6190167}"
+              DTS:DTSID="{F271D170-ACD8-4F99-B9C0-8EFB1130BB3D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:DataType="133"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="DATE_CAPTURED"
-              DTS:DTSID="{03E2F3AB-6CED-48EF-AB44-24E534D096F2}"
+              DTS:DTSID="{9E4BE238-751E-4DB8-9E68-9705AFC23902}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -113,16 +227,27 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{C22AF7D6-13C0-4843-8667-BE9DF80357BB}"
+      DTS:ObjectName="RPT_DISCOUNTED_BIG_HOUSES_DerivedColumnDerivedColumnOutputREPORTED_BYFriendlyExpression">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">"DISCOUNTED_BIG_UNITS"</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Task"
+      DTS:refId="Package\RPT_DISCOUNTED_BIG_HOUSES"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{B91CEDBA-7E95-4907-B3CD-85C0AF33B11C}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task"
+      DTS:ObjectName="RPT_DISCOUNTED_BIG_HOUSES"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -130,7 +255,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\Aggregate"
+              refId="Package\RPT_DISCOUNTED_BIG_HOUSES\Aggregate"
               componentClassID="Microsoft.Aggregate"
               contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
               description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
@@ -162,23 +287,35 @@
               </properties>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Aggregate.Inputs[Aggregate Input 1]"
+                  refId="Package\RPT_DISCOUNTED_BIG_HOUSES\Aggregate.Inputs[Aggregate Input 1]"
                   name="Aggregate Input 1">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Aggregate.Inputs[Aggregate Input 1].Columns[SOURCE]"
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\Aggregate.Inputs[Aggregate Input 1].Columns[SOURCE]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="500"
                       cachedName="SOURCE"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[SOURCE]" />
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[SOURCE]" />
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\Aggregate.Inputs[Aggregate Input 1].Columns[ReportedBy]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="ReportedBy"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[ReportedBy]" />
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\Aggregate.Inputs[Aggregate Input 1].Columns[ReportedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ReportedDate"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[ReportedDate]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1]"
+                  refId="Package\RPT_DISCOUNTED_BIG_HOUSES\Aggregate.Outputs[Aggregate Output 1]"
                   name="Aggregate Output 1">
                   <properties>
                     <property
@@ -193,18 +330,18 @@
                   </properties>
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[SOURCE]"
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\Aggregate.Outputs[Aggregate Output 1].Columns[SOURCE]"
                       codePage="1252"
                       dataType="str"
                       length="500"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[SOURCE]"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\Aggregate.Outputs[Aggregate Output 1].Columns[SOURCE]"
                       name="SOURCE">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[SOURCE]}</property>
+                          name="AggregationColumnId">#{Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[SOURCE]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the type of aggregation."
@@ -220,51 +357,1056 @@
                           name="AggregationComparisonFlags">1</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\Aggregate.Outputs[Aggregate Output 1].Columns[ReportedBy]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\Aggregate.Outputs[Aggregate Output 1].Columns[ReportedBy]"
+                      name="ReportedBy">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[ReportedBy]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\Aggregate.Outputs[Aggregate Output 1].Columns[ReportedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\Aggregate.Outputs[Aggregate Output 1].Columns[ReportedDate]"
+                      name="ReportedDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[ReportedDate]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Multicast"
+              refId="Package\RPT_DISCOUNTED_BIG_HOUSES\Multicast"
               componentClassID="Microsoft.Multicast"
               contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
               name="Multicast">
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Multicast.Inputs[Multicast Input 1]"
+                  refId="Package\RPT_DISCOUNTED_BIG_HOUSES\Multicast.Inputs[Multicast Input 1]"
                   name="Multicast Input 1">
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Multicast.Outputs[Multicast Output 1]"
+                  refId="Package\RPT_DISCOUNTED_BIG_HOUSES\Multicast.Outputs[Multicast Output 1]"
                   deleteOutputOnPathDetached="true"
                   name="Multicast Output 1"
-                  synchronousInputId="Package\Data Flow Task\Multicast.Inputs[Multicast Input 1]">
+                  synchronousInputId="Package\RPT_DISCOUNTED_BIG_HOUSES\Multicast.Inputs[Multicast Input 1]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Multicast.Outputs[Multicast Output 3]"
-                  deleteOutputOnPathDetached="true"
-                  name="Multicast Output 3"
-                  synchronousInputId="Package\Data Flow Task\Multicast.Inputs[Multicast Input 1]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow Task\Multicast.Outputs[Multicast Output 2]"
-                  dangling="true"
+                  refId="Package\RPT_DISCOUNTED_BIG_HOUSES\Multicast.Outputs[Multicast Output 2]"
                   deleteOutputOnPathDetached="true"
                   name="Multicast Output 2"
-                  synchronousInputId="Package\Data Flow Task\Multicast.Inputs[Multicast Input 1]">
+                  synchronousInputId="Package\RPT_DISCOUNTED_BIG_HOUSES\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\RPT_DISCOUNTED_BIG_HOUSES\Multicast.Outputs[Multicast Output 3]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 3"
+                  synchronousInputId="Package\RPT_DISCOUNTED_BIG_HOUSES\Multicast.Inputs[Multicast Input 1]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Destination"
+              refId="Package\RPT_DISCOUNTED_BIG_HOUSES\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[REPORTED_SOURCES]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\RPT_DISCOUNTED_BIG_HOUSES\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.REAL_ESTATE]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.REAL_ESTATE]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\RPT_DISCOUNTED_BIG_HOUSES\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SOURCE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="SOURCE"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_BIG_HOUSES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE]"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\Aggregate.Outputs[Aggregate Output 1].Columns[SOURCE]" />
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ReportedBy]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="ReportedBy"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_BIG_HOUSES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[REPORTED_BY_JOB]"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\Aggregate.Outputs[Aggregate Output 1].Columns[ReportedBy]" />
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ReportedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ReportedDate"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_BIG_HOUSES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DATE_REPORTED]"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\Aggregate.Outputs[Aggregate Output 1].Columns[ReportedDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="SOURCE" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[REPORTED_BY_JOB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="REPORTED_BY_JOB" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DATE_REPORTED]"
+                      dataType="dbDate"
+                      name="DATE_REPORTED" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\RPT_DISCOUNTED_BIG_HOUSES\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\RPT_DISCOUNTED_BIG_HOUSES\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="18441"
+              name="rpt_UNITS_BIG_DISCOUNTED"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].Columns[CONDO_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CONDO_NAME"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[CONDO_NAME]"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[CONDO_NAME]" />
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].Columns[AREA]"
+                      cachedDataType="i2"
+                      cachedName="AREA"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[AREA]"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[AREA]" />
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].Columns[AskingPrice]"
+                      cachedDataType="i4"
+                      cachedName="AskingPrice"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[AskingPrice]"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[AskingPrice]" />
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].Columns[SOURCE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="SOURCE"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[SOURCE]"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[SOURCE]" />
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].Columns[TransactedArea]"
+                      cachedDataType="i4"
+                      cachedName="TransactedArea"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[TransactedArea]"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[TransactedArea]" />
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].Columns[MinTransactedPrice]"
+                      cachedDataType="i4"
+                      cachedName="MinTransactedPrice"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[MinTransactedPrice]"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[MinTransactedPrice]" />
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].Columns[YEAR]"
+                      cachedDataType="i4"
+                      cachedName="YEAR"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[YEAR]"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[YEAR]" />
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].Columns[DATE_CAPTURED]"
+                      cachedDataType="dbDate"
+                      cachedName="DATE_CAPTURED"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[DATE_CAPTURED]"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[DATE_CAPTURED]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[CONDO_NAME]"
+                      codePage="65001"
+                      dataType="str"
+                      length="150"
+                      name="CONDO_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[AREA]"
+                      codePage="65001"
+                      dataType="str"
+                      length="10"
+                      name="AREA" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[AskingPrice]"
+                      codePage="65001"
+                      dataType="str"
+                      length="20"
+                      name="AskingPrice" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[SOURCE]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="SOURCE" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[TransactedArea]"
+                      codePage="65001"
+                      dataType="str"
+                      length="10"
+                      name="TransactedArea" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[YEAR]"
+                      codePage="65001"
+                      dataType="str"
+                      length="10"
+                      name="YEAR" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[MinTransactedPrice]"
+                      codePage="65001"
+                      dataType="str"
+                      length="10"
+                      name="MinTransactedPrice" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[DATE_CAPTURED]"
+                      codePage="65001"
+                      dataType="str"
+                      length="20"
+                      name="DATE_CAPTURED" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="src_VW_RPT_DISCOUNTED_UNITS_BIG"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [CONDO_NAME]
+      ,[AREA]
+      ,CAST([AskingPrice] as Varchar(10)) as "AskingPrice"
+      ,CAST([TransactedArea] as Varchar(10)) as "TransactedArea"
+      ,CAST([YEAR] as Varchar(10)) as "YEAR" 
+      ,CAST([MinTransactedPrice]  as Varchar(10)) as "MinTransactedPrice"
+      ,[SOURCE]
+      ,CAST([DATE_CAPTURED] as Varchar(10)) as "DATE_CAPTURED"
+      ,'BIG_DISCOUNTED_UNITS' as "ReportedBy"
+     ,CONVERT(VARCHAR(10), getdate(), 103) as "ReportedDate"
+FROM [REAL_ESTATE].[dbo].[VW_RPT_DISCOUNTED_UNITS_BIG]
+WHERE SOURCE NOT IN ( SELECT SOURCE FROM [REAL_ESTATE].[dbo].REPORTED_SOURCES )</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.REAL_ESTATE]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.REAL_ESTATE]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[CONDO_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[CONDO_NAME]"
+                      length="50"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[CONDO_NAME]"
+                      name="CONDO_NAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[AREA]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[AREA]"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[AREA]"
+                      name="AREA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[AskingPrice]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[AskingPrice]"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[AskingPrice]"
+                      name="AskingPrice"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[TransactedArea]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[TransactedArea]"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[TransactedArea]"
+                      name="TransactedArea"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[YEAR]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[YEAR]"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[YEAR]"
+                      name="YEAR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[MinTransactedPrice]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[MinTransactedPrice]"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[MinTransactedPrice]"
+                      name="MinTransactedPrice"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[SOURCE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[SOURCE]"
+                      length="500"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[SOURCE]"
+                      name="SOURCE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[DATE_CAPTURED]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[DATE_CAPTURED]"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[DATE_CAPTURED]"
+                      name="DATE_CAPTURED"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[ReportedBy]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[ReportedBy]"
+                      length="20"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[ReportedBy]"
+                      name="ReportedBy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[ReportedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[ReportedDate]"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[ReportedDate]"
+                      name="ReportedDate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[CONDO_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CONDO_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[AREA]"
+                      dataType="i2"
+                      name="AREA" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[AskingPrice]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="AskingPrice" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[TransactedArea]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="TransactedArea" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[YEAR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="YEAR" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[MinTransactedPrice]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="MinTransactedPrice" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[SOURCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="SOURCE" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[DATE_CAPTURED]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="DATE_CAPTURED" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[ReportedBy]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="ReportedBy" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[ReportedDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ReportedDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[CONDO_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[CONDO_NAME]"
+                      name="CONDO_NAME" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[AREA]"
+                      dataType="i2"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[AREA]"
+                      name="AREA" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[AskingPrice]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[AskingPrice]"
+                      name="AskingPrice" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[TransactedArea]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[TransactedArea]"
+                      name="TransactedArea" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[YEAR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[YEAR]"
+                      name="YEAR" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[MinTransactedPrice]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[MinTransactedPrice]"
+                      name="MinTransactedPrice" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[SOURCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[SOURCE]"
+                      name="SOURCE" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[DATE_CAPTURED]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[DATE_CAPTURED]"
+                      name="DATE_CAPTURED" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[ReportedBy]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[ReportedBy]"
+                      name="ReportedBy" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[ReportedDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[ReportedDate]"
+                      name="ReportedDate" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\RPT_DISCOUNTED_BIG_HOUSES.Paths[Aggregate Output 1]"
+              endId="Package\RPT_DISCOUNTED_BIG_HOUSES\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Aggregate Output 1"
+              startId="Package\RPT_DISCOUNTED_BIG_HOUSES\Aggregate.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\RPT_DISCOUNTED_BIG_HOUSES.Paths[Multicast Output 1]"
+              endId="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input]"
+              name="Multicast Output 1"
+              startId="Package\RPT_DISCOUNTED_BIG_HOUSES\Multicast.Outputs[Multicast Output 1]" />
+            <path
+              refId="Package\RPT_DISCOUNTED_BIG_HOUSES.Paths[Multicast Output 2]"
+              endId="Package\RPT_DISCOUNTED_BIG_HOUSES\Aggregate.Inputs[Aggregate Input 1]"
+              name="Multicast Output 2"
+              startId="Package\RPT_DISCOUNTED_BIG_HOUSES\Multicast.Outputs[Multicast Output 2]" />
+            <path
+              refId="Package\RPT_DISCOUNTED_BIG_HOUSES.Paths[OLE DB Source Output]"
+              endId="Package\RPT_DISCOUNTED_BIG_HOUSES\Multicast.Inputs[Multicast Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\RPT_DISCOUNTED_PSF_UNITS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{E94E724B-7008-4003-863F-5934D8E8DD45}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="RPT_DISCOUNTED_PSF_UNITS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\RPT_DISCOUNTED_PSF_UNITS\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\RPT_DISCOUNTED_PSF_UNITS\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\RPT_DISCOUNTED_PSF_UNITS\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\RPT_DISCOUNTED_PSF_UNITS\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\Derived Column.Outputs[Derived Column Output].Columns[REPORTED_BY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\Derived Column.Outputs[Derived Column Output].Columns[REPORTED_BY]"
+                      name="REPORTED_BY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"DISCOUNTED_PSF"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"DISCOUNTED_PSF"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\Derived Column.Outputs[Derived Column Output].Columns[REPORTED_DATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\Derived Column.Outputs[Derived Column Output].Columns[REPORTED_DATE]"
+                      name="REPORTED_DATE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\RPT_DISCOUNTED_PSF_UNITS\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\RPT_DISCOUNTED_PSF_UNITS\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="18441"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Discounted_PSF_CSV]"
+                  connectionManagerRefId="Package.ConnectionManagers[Discounted_PSF_CSV]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].Columns[CONDO_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CONDO_NAME"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CONDO_NAME]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONDO_NAME]" />
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].Columns[AREA]"
+                      cachedDataType="i2"
+                      cachedName="AREA"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AREA]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[AREA]" />
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].Columns[psf]"
+                      cachedDataType="i2"
+                      cachedName="psf"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[psf]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[psf]" />
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].Columns[avgpsf]"
+                      cachedDataType="i4"
+                      cachedName="avgpsf"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[avgpsf]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[avgpsf]" />
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].Columns[PSF Diff]"
+                      cachedDataType="i4"
+                      cachedName="PSF Diff"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PSF Diff]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[PSF Diff]" />
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].Columns[district_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="150"
+                      cachedName="district_name"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[district_name]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[district_name]" />
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].Columns[AgeCategory]"
+                      cachedDataType="i4"
+                      cachedName="AgeCategory"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AgeCategory]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[AgeCategory]" />
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].Columns[type_Of_Sale]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="type_Of_Sale"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[type_Of_Sale]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[type_Of_Sale]" />
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].Columns[SOURCE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="SOURCE"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[SOURCE]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE]" />
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].Columns[AskingPrice]"
+                      cachedDataType="i4"
+                      cachedName="AskingPrice"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AskingPrice]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[AskingPrice]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CONDO_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CONDO_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AREA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="AREA" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AskingPrice]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="AskingPrice" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[psf]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="psf" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[avgpsf]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="avgpsf" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PSF Diff]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="PSF Diff" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[district_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="district_name" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AgeCategory]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="AgeCategory" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[type_Of_Sale]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="type_Of_Sale" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[SOURCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="SOURCE" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\RPT_DISCOUNTED_PSF_UNITS\Multicast 1"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="Multicast 1">
+              <inputs>
+                <input
+                  refId="Package\RPT_DISCOUNTED_PSF_UNITS\Multicast 1.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\RPT_DISCOUNTED_PSF_UNITS\Multicast 1.Outputs[Multicast Output 2]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\RPT_DISCOUNTED_PSF_UNITS\Multicast 1.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\RPT_DISCOUNTED_PSF_UNITS\Multicast 1.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\RPT_DISCOUNTED_PSF_UNITS\Multicast 1.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\RPT_DISCOUNTED_PSF_UNITS\Multicast 1.Outputs[Multicast Output 3]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 3"
+                  synchronousInputId="Package\RPT_DISCOUNTED_PSF_UNITS\Multicast 1.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -321,7 +1463,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Destination.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.REAL_ESTATE]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.REAL_ESTATE]"
                   description="The OLE DB runtime connection used to access the database."
@@ -329,50 +1471,74 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SOURCE]"
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SOURCE]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="500"
                       cachedName="SOURCE"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE]"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[SOURCE]" />
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE]" />
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[REPORTED_BY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="REPORTED_BY"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[REPORTED_BY_JOB]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\Derived Column.Outputs[Derived Column Output].Columns[REPORTED_BY]" />
+                    <inputColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[REPORTED_DATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="REPORTED_DATE"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DATE_REPORTED]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\Derived Column.Outputs[Derived Column Output].Columns[REPORTED_DATE]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE]"
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE]"
                       codePage="1252"
                       dataType="str"
                       length="500"
                       name="SOURCE" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[REPORTED_BY_JOB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="REPORTED_BY_JOB" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DATE_REPORTED]"
+                      dataType="dbDate"
+                      name="DATE_REPORTED" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -381,142 +1547,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED"
-              componentClassID="Microsoft.FlatFileDestination"
-              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Flat File Destination"
-              localeId="18441"
-              name="rpt_UNITS_BIG_DISCOUNTED"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether the data will overwrite or append to the destination file."
-                  name="Overwrite">true</property>
-                <property
-                  dataType="System.Null"
-                  description="Specifies the text to write to the destination file before any data is written."
-                  expressionType="Notify"
-                  name="Header" />
-                <property
-                  dataType="System.Boolean"
-                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
-                  name="EscapeQualifier">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
-                  name="FlatFileConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input]"
-                  hasSideEffects="true"
-                  name="Flat File Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].Columns[CONDO_NAME]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="CONDO_NAME"
-                      externalMetadataColumnId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[CONDO_NAME]"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[CONDO_NAME]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].Columns[AREA]"
-                      cachedDataType="i2"
-                      cachedName="AREA"
-                      externalMetadataColumnId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[AREA]"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[AREA]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].Columns[AskingPrice]"
-                      cachedDataType="i4"
-                      cachedName="AskingPrice"
-                      externalMetadataColumnId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[AskingPrice]"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[AskingPrice]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].Columns[TransactedArea]"
-                      cachedDataType="i4"
-                      cachedName="TransactedArea"
-                      externalMetadataColumnId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[TransactedArea]"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[TransactedArea]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].Columns[YEAR]"
-                      cachedDataType="i4"
-                      cachedName="YEAR"
-                      externalMetadataColumnId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[YEAR]"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[YEAR]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].Columns[MinTransactedPrice]"
-                      cachedDataType="i4"
-                      cachedName="MinTransactedPrice"
-                      externalMetadataColumnId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[MinTransactedPrice]"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[MinTransactedPrice]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].Columns[SOURCE]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="500"
-                      cachedName="SOURCE"
-                      externalMetadataColumnId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[SOURCE]"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[SOURCE]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].Columns[DATE_CAPTURED]"
-                      cachedDataType="dbDate"
-                      cachedName="DATE_CAPTURED"
-                      externalMetadataColumnId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[DATE_CAPTURED]"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[DATE_CAPTURED]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[CONDO_NAME]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="CONDO_NAME" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[AREA]"
-                      dataType="i2"
-                      name="AREA" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[AskingPrice]"
-                      dataType="i4"
-                      name="AskingPrice" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[TransactedArea]"
-                      dataType="i4"
-                      name="TransactedArea" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[YEAR]"
-                      dataType="i4"
-                      name="YEAR" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[MinTransactedPrice]"
-                      dataType="i4"
-                      name="MinTransactedPrice" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[SOURCE]"
-                      codePage="1252"
-                      dataType="str"
-                      length="500"
-                      name="SOURCE" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input].ExternalColumns[DATE_CAPTURED]"
-                      dataType="dbDate"
-                      name="DATE_CAPTURED" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-            </component>
-            <component
-              refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG"
+              refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="src_VW_RPT_DISCOUNTED_UNITS_BIG"
+              name="OLE DB Source"
               usesDispositions="true"
               version="7">
               <properties>
@@ -527,7 +1562,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
+                  name="OpenRowset">[dbo].[VW_RPT_DISCOUNTED_PSF_UNITS_IN_A_CONDO]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -538,14 +1573,15 @@
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [CONDO_NAME]
       ,[AREA]
-      ,[AskingPrice]
-      ,[TransactedArea]
-      ,[YEAR]
-      ,[MinTransactedPrice]
+      ,[PRICE] as "AskingPrice"
+      ,[psf]
+      ,[avgpsf]
+      ,[PSF Diff] 
+      ,[district_name]
+      ,[AgeCategory]
+      ,[type_Of_Sale]
       ,[SOURCE]
-      ,[DATE_CAPTURED]
-  FROM [REAL_ESTATE].[dbo].[VW_RPT_DISCOUNTED_UNITS_BIG]
-WHERE SOURCE NOT IN ( SELECT SOURCE FROM [REAL_ESTATE].[dbo].REPORTED_SOURCES )</property>
+  FROM [REAL_ESTATE].[dbo].[VW_RPT_DISCOUNTED_PSF_UNITS_IN_A_CONDO]</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -570,7 +1606,7 @@ WHERE SOURCE NOT IN ( SELECT SOURCE FROM [REAL_ESTATE].[dbo].REPORTED_SOURCES )<
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Connections[OleDbConnection]"
+                  refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.REAL_ESTATE]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.REAL_ESTATE]"
                   description="The OLE DB runtime connection used to access the database."
@@ -578,185 +1614,233 @@ WHERE SOURCE NOT IN ( SELECT SOURCE FROM [REAL_ESTATE].[dbo].REPORTED_SOURCES )<
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output]"
+                  refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[CONDO_NAME]"
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONDO_NAME]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[CONDO_NAME]"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CONDO_NAME]"
                       length="50"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[CONDO_NAME]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONDO_NAME]"
                       name="CONDO_NAME"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[AREA]"
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[AREA]"
                       dataType="i2"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[AREA]"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[AREA]"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AREA]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[AREA]"
                       name="AREA"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[AskingPrice]"
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[psf]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[psf]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[psf]"
+                      name="psf"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[avgpsf]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[AskingPrice]"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[AskingPrice]"
-                      name="AskingPrice"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avgpsf]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[avgpsf]"
+                      name="avgpsf"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[TransactedArea]"
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[PSF Diff]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[TransactedArea]"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[TransactedArea]"
-                      name="TransactedArea"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PSF Diff]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[PSF Diff]"
+                      name="PSF Diff"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[YEAR]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[YEAR]"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[YEAR]"
-                      name="YEAR"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[MinTransactedPrice]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[MinTransactedPrice]"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[MinTransactedPrice]"
-                      name="MinTransactedPrice"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[SOURCE]"
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[district_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[SOURCE]"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[district_name]"
+                      length="150"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[district_name]"
+                      name="district_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[AgeCategory]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AgeCategory]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[AgeCategory]"
+                      name="AgeCategory"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[type_Of_Sale]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[type_Of_Sale]"
+                      length="20"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[type_Of_Sale]"
+                      name="type_Of_Sale"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SOURCE]"
                       length="500"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[SOURCE]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE]"
                       name="SOURCE"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[DATE_CAPTURED]"
-                      dataType="dbDate"
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[AskingPrice]"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[DATE_CAPTURED]"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].Columns[DATE_CAPTURED]"
-                      name="DATE_CAPTURED"
+                      externalMetadataColumnId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AskingPrice]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].Columns[AskingPrice]"
+                      name="AskingPrice"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[CONDO_NAME]"
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CONDO_NAME]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="CONDO_NAME" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[AREA]"
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AREA]"
                       dataType="i2"
                       name="AREA" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[AskingPrice]"
-                      dataType="i4"
-                      name="AskingPrice" />
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[psf]"
+                      dataType="i2"
+                      name="psf" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[TransactedArea]"
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avgpsf]"
                       dataType="i4"
-                      name="TransactedArea" />
+                      name="avgpsf" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[YEAR]"
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PSF Diff]"
                       dataType="i4"
-                      name="YEAR" />
+                      name="PSF Diff" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[MinTransactedPrice]"
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[district_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
+                      name="district_name" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AgeCategory]"
                       dataType="i4"
-                      name="MinTransactedPrice" />
+                      name="AgeCategory" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[SOURCE]"
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[type_Of_Sale]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="type_Of_Sale" />
+                    <externalMetadataColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SOURCE]"
                       codePage="1252"
                       dataType="str"
                       length="500"
                       name="SOURCE" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output].ExternalColumns[DATE_CAPTURED]"
-                      dataType="dbDate"
-                      name="DATE_CAPTURED" />
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AskingPrice]"
+                      dataType="i4"
+                      name="AskingPrice" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output]"
+                  refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[CONDO_NAME]"
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CONDO_NAME]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[CONDO_NAME]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CONDO_NAME]"
                       name="CONDO_NAME" />
                     <outputColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[AREA]"
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AREA]"
                       dataType="i2"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[AREA]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AREA]"
                       name="AREA" />
                     <outputColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[AskingPrice]"
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AskingPrice]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[AskingPrice]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AskingPrice]"
                       name="AskingPrice" />
                     <outputColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[TransactedArea]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[TransactedArea]"
-                      name="TransactedArea" />
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[psf]"
+                      dataType="i2"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[psf]"
+                      name="psf" />
                     <outputColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[YEAR]"
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avgpsf]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[YEAR]"
-                      name="YEAR" />
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avgpsf]"
+                      name="avgpsf" />
                     <outputColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[MinTransactedPrice]"
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PSF Diff]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[MinTransactedPrice]"
-                      name="MinTransactedPrice" />
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PSF Diff]"
+                      name="PSF Diff" />
                     <outputColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[SOURCE]"
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[district_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[district_name]"
+                      name="district_name" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AgeCategory]"
+                      dataType="i4"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AgeCategory]"
+                      name="AgeCategory" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[type_Of_Sale]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[type_Of_Sale]"
+                      name="type_Of_Sale" />
+                    <outputColumn
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SOURCE]"
                       codePage="1252"
                       dataType="str"
                       length="500"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[SOURCE]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SOURCE]"
                       name="SOURCE" />
                     <outputColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[DATE_CAPTURED]"
-                      dataType="dbDate"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[DATE_CAPTURED]"
-                      name="DATE_CAPTURED" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -767,30 +1851,40 @@ WHERE SOURCE NOT IN ( SELECT SOURCE FROM [REAL_ESTATE].[dbo].REPORTED_SOURCES )<
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Task.Paths[Aggregate Output 1]"
-              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="Aggregate Output 1"
-              startId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1]" />
+              refId="Package\RPT_DISCOUNTED_PSF_UNITS.Paths[Derived Column Output]"
+              endId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\RPT_DISCOUNTED_PSF_UNITS\Derived Column.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Multicast Output 1]"
-              endId="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED.Inputs[Flat File Destination Input]"
+              refId="Package\RPT_DISCOUNTED_PSF_UNITS.Paths[Multicast Output 1]"
+              endId="Package\RPT_DISCOUNTED_PSF_UNITS\Derived Column.Inputs[Derived Column Input]"
               name="Multicast Output 1"
-              startId="Package\Data Flow Task\Multicast.Outputs[Multicast Output 1]" />
+              startId="Package\RPT_DISCOUNTED_PSF_UNITS\Multicast 1.Outputs[Multicast Output 1]" />
             <path
-              refId="Package\Data Flow Task.Paths[Multicast Output 3]"
-              endId="Package\Data Flow Task\Aggregate.Inputs[Aggregate Input 1]"
-              name="Multicast Output 3"
-              startId="Package\Data Flow Task\Multicast.Outputs[Multicast Output 3]" />
+              refId="Package\RPT_DISCOUNTED_PSF_UNITS.Paths[Multicast Output 2]"
+              endId="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="Multicast Output 2"
+              startId="Package\RPT_DISCOUNTED_PSF_UNITS\Multicast 1.Outputs[Multicast Output 2]" />
             <path
-              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
-              endId="Package\Data Flow Task\Multicast.Inputs[Multicast Input 1]"
+              refId="Package\RPT_DISCOUNTED_PSF_UNITS.Paths[OLE DB Source Output]"
+              endId="Package\RPT_DISCOUNTED_PSF_UNITS\Multicast 1.Inputs[Multicast Input 1]"
               name="OLE DB Source Output"
-              startId="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG.Outputs[OLE DB Source Output]" />
+              startId="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{19956CCC-2620-4F7D-AF14-EB4D943A5507}"
+      DTS:From="Package\RPT_DISCOUNTED_BIG_HOUSES"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\RPT_DISCOUNTED_PSF_UNITS" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -802,61 +1896,87 @@ WHERE SOURCE NOT IN ( SELECT SOURCE FROM [REAL_ESTATE].[dbo].REPORTED_SOURCES )<
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\Data Flow Task"
-          TopLeft="166.666660043929,94.2933340827094" />
+          Size="247.2,41.6"
+          Id="Package\RPT_DISCOUNTED_BIG_HOUSES"
+          TopLeft="202.666658613417,85.2800006777445" />
+        <NodeLayout
+          Size="236.8,41.6"
+          Id="Package\RPT_DISCOUNTED_PSF_UNITS"
+          TopLeft="206.666658454471,180.266668099297" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="325.666658533944,126.880000677745">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.3866674215525"
+              Start="0,0"
+              End="0,45.8866674215525">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.8866674215525" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Data Flow Task">
+    design-time-name="Package\RPT_DISCOUNTED_BIG_HOUSES">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="276,41.6"
-          Id="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG"
+          Id="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG"
           TopLeft="279.86666648123,52" />
         <NodeLayout
           Size="225.6,41.6"
-          Id="Package\Data Flow Task\rpt_UNITS_BIG_DISCOUNTED"
+          Id="Package\RPT_DISCOUNTED_BIG_HOUSES\rpt_UNITS_BIG_DISCOUNTED"
           TopLeft="78.9333402739628,290.133333305783" />
         <NodeLayout
-          Size="119.2,41.6"
-          Id="Package\Data Flow Task\Multicast"
-          TopLeft="263.333322869407,147.680001173655" />
+          Size="126.4,41.6"
+          Id="Package\RPT_DISCOUNTED_BIG_HOUSES\Aggregate"
+          TopLeft="439.333315875796,151.840001206716" />
         <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="365.333318816292,352.213336132473" />
+          Size="119.2,41.6"
+          Id="Package\RPT_DISCOUNTED_BIG_HOUSES\Multicast"
+          TopLeft="219.33332461781,129.653334363725" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          Id="Package\RPT_DISCOUNTED_BIG_HOUSES.Paths[OLE DB Source Output]"
           TopLeft="417.86666648123,93.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-94.9333436118228,54.0800011736552"
+              EndConnector="-138.93334186342,36.0533343637255"
               Start="0,0"
-              End="-94.9333436118228,46.5800011736552">
+              End="-138.93334186342,28.5533343637255">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.0400005868276" />
+                    End="0,14.0266671818627" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,23.0400005868276"
-                    Point2="0,27.0400005868276"
-                    Point3="-4,27.0400005868276" />
+                    Point1="0,14.0266671818627"
+                    Point2="0,18.0266671818627"
+                    Point3="-4,18.0266671818627" />
                   <mssgle:LineSegment
-                    End="-90.9333436118228,27.0400005868276" />
+                    End="-134.93334186342,18.0266671818627" />
                   <mssgle:CubicBezierSegment
-                    Point1="-90.9333436118228,27.0400005868276"
-                    Point2="-94.9333436118228,27.0400005868276"
-                    Point3="-94.9333436118228,31.0400005868276" />
+                    Point1="-134.93334186342,18.0266671818627"
+                    Point2="-138.93334186342,18.0266671818627"
+                    Point3="-138.93334186342,22.0266671818627" />
                   <mssgle:LineSegment
-                    End="-94.9333436118228,46.5800011736552" />
+                    End="-138.93334186342,28.5533343637255" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -866,31 +1986,65 @@ WHERE SOURCE NOT IN ( SELECT SOURCE FROM [REAL_ESTATE].[dbo].REPORTED_SOURCES )<
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Multicast Output 1]"
-          TopLeft="322.933322869407,189.280001173655">
+          Id="Package\RPT_DISCOUNTED_BIG_HOUSES.Paths[Multicast Output 1]"
+          TopLeft="278.93332461781,171.253334363725">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-131.199982595445,100.853332132128"
+              EndConnector="-87.1999843438474,118.879998942058"
               Start="0,0"
-              End="-131.199982595445,93.3533321321276">
+              End="-87.1999843438474,111.379998942058">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.4266660660638" />
+                    End="0,55.4399994710288" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,46.4266660660638"
-                    Point2="0,50.4266660660638"
-                    Point3="-4,50.4266660660638" />
+                    Point1="0,55.4399994710288"
+                    Point2="0,59.4399994710288"
+                    Point3="-4,59.4399994710288" />
                   <mssgle:LineSegment
-                    End="-127.199982595445,50.4266660660638" />
+                    End="-83.1999843438474,59.4399994710288" />
                   <mssgle:CubicBezierSegment
-                    Point1="-127.199982595445,50.4266660660638"
-                    Point2="-131.199982595445,50.4266660660638"
-                    Point3="-131.199982595445,54.4266660660638" />
+                    Point1="-83.1999843438474,59.4399994710288"
+                    Point2="-87.1999843438474,59.4399994710288"
+                    Point3="-87.1999843438474,63.4399994710288" />
                   <mssgle:LineSegment
-                    End="-131.199982595445,93.3533321321276" />
+                    End="-87.1999843438474,111.379998942058" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\RPT_DISCOUNTED_BIG_HOUSES.Paths[Multicast Output 2]"
+          TopLeft="338.53332461781,150.453334363725">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="100.799991257986,22.1866668429905"
+              Start="0,0"
+              End="93.2999912579858,22.1866668429905">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="46.3999956289929,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="46.3999956289929,0"
+                    Point2="50.3999956289929,0"
+                    Point3="50.3999956289929,4" />
+                  <mssgle:LineSegment
+                    End="50.3999956289929,18.1866668429905" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50.3999956289929,18.1866668429905"
+                    Point2="50.3999956289929,22.1866668429905"
+                    Point3="54.3999956289929,22.1866668429905" />
+                  <mssgle:LineSegment
+                    End="93.2999912579858,22.1866668429905" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -900,69 +2054,35 @@ WHERE SOURCE NOT IN ( SELECT SOURCE FROM [REAL_ESTATE].[dbo].REPORTED_SOURCES )<
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="126.4,41.6"
-          Id="Package\Data Flow Task\Aggregate"
-          TopLeft="407.333317147362,210.773335008409" />
+          Size="171.2,41.6"
+          Id="Package\RPT_DISCOUNTED_BIG_HOUSES\OLE DB Destination"
+          TopLeft="435.999982674917,277.333335537381" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Multicast Output 3]"
-          TopLeft="382.533322869407,168.480001173655">
+          Id="Package\RPT_DISCOUNTED_BIG_HOUSES.Paths[Aggregate Output 1]"
+          TopLeft="502.533315875796,193.440001206716">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="24.7999942779546,63.0933338347543"
+              EndConnector="19.0666667991212,83.8933343306647"
               Start="0,0"
-              End="17.2999942779546,63.0933338347543">
+              End="19.0666667991212,76.3933343306647">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="8.39999713897728,0" />
+                    End="0,37.9466671653324" />
                   <mssgle:CubicBezierSegment
-                    Point1="8.39999713897728,0"
-                    Point2="12.3999971389773,0"
-                    Point3="12.3999971389773,4" />
+                    Point1="0,37.9466671653324"
+                    Point2="0,41.9466671653324"
+                    Point3="4,41.9466671653324" />
                   <mssgle:LineSegment
-                    End="12.3999971389773,59.0933338347543" />
+                    End="15.0666667991212,41.9466671653324" />
                   <mssgle:CubicBezierSegment
-                    Point1="12.3999971389773,59.0933338347543"
-                    Point2="12.3999971389773,63.0933338347543"
-                    Point3="16.3999971389773,63.0933338347543" />
+                    Point1="15.0666667991212,41.9466671653324"
+                    Point2="19.0666667991212,41.9466671653324"
+                    Point3="19.0666667991212,45.9466671653324" />
                   <mssgle:LineSegment
-                    End="17.2999942779546,63.0933338347543" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Aggregate Output 1]"
-          TopLeft="470.533317147362,252.373335008409">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-19.5999983310697,99.8400011240639"
-              Start="0,0"
-              End="-19.5999983310697,92.3400011240639">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.9200005620319" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,45.9200005620319"
-                    Point2="0,49.9200005620319"
-                    Point3="-4,49.9200005620319" />
-                  <mssgle:LineSegment
-                    End="-15.5999983310697,49.9200005620319" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-15.5999983310697,49.9200005620319"
-                    Point2="-19.5999983310697,49.9200005620319"
-                    Point3="-19.5999983310697,53.9200005620319" />
-                  <mssgle:LineSegment
-                    End="-19.5999983310697,92.3400011240639" />
+                    End="19.0666667991212,76.3933343306647" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -975,15 +2095,193 @@ WHERE SOURCE NOT IN ( SELECT SOURCE FROM [REAL_ESTATE].[dbo].REPORTED_SOURCES )<
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\src_VW_RPT_DISCOUNTED_UNITS_BIG">
+    design-time-name="Package\RPT_DISCOUNTED_BIG_HOUSES\src_VW_RPT_DISCOUNTED_UNITS_BIG">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\RPT_DISCOUNTED_PSF_UNITS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="128,41.6"
+          Id="Package\RPT_DISCOUNTED_PSF_UNITS\Multicast 1"
+          TopLeft="340.8,138.4" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source"
+          TopLeft="329.6,52" />
+        <EdgeLayout
+          Id="Package\RPT_DISCOUNTED_PSF_UNITS.Paths[OLE DB Source Output]"
+          TopLeft="405.2,93.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.8"
+              Start="0,0"
+              End="0,37.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\RPT_DISCOUNTED_PSF_UNITS\Flat File Destination"
+          TopLeft="152,308.8" />
+        <EdgeLayout
+          Id="Package\RPT_DISCOUNTED_PSF_UNITS.Paths[Multicast Output 2]"
+          TopLeft="384.8,180">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-147.6,128.8"
+              Start="0,0"
+              End="-147.6,121.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.4740740740741" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,48.4740740740741"
+                    Point2="0,52.4740740740741"
+                    Point3="-4,52.4740740740741" />
+                  <mssgle:LineSegment
+                    End="-143.6,52.4740740740741" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-143.6,52.4740740740741"
+                    Point2="-147.6,52.4740740740741"
+                    Point3="-147.6,56.4740740740741" />
+                  <mssgle:LineSegment
+                    End="-147.6,121.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Destination"
+          TopLeft="437.6,337.6" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\RPT_DISCOUNTED_PSF_UNITS\Derived Column"
+          TopLeft="456,219.2" />
+        <EdgeLayout
+          Id="Package\RPT_DISCOUNTED_PSF_UNITS.Paths[Multicast Output 1]"
+          TopLeft="424.8,180">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="107.6,39.2"
+              Start="0,0"
+              End="107.6,31.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.9703703703704" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.9703703703704"
+                    Point2="0,15.9703703703704"
+                    Point3="4,15.9703703703704" />
+                  <mssgle:LineSegment
+                    End="103.6,15.9703703703704" />
+                  <mssgle:CubicBezierSegment
+                    Point1="103.6,15.9703703703704"
+                    Point2="107.6,15.9703703703704"
+                    Point3="107.6,19.9703703703704" />
+                  <mssgle:LineSegment
+                    End="107.6,31.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\RPT_DISCOUNTED_PSF_UNITS.Paths[Derived Column Output]"
+          TopLeft="532.4,260.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.19999999999993,76.8"
+              Start="0,0"
+              End="-9.19999999999993,69.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.4"
+                    Point2="0,38.4"
+                    Point3="-4,38.4" />
+                  <mssgle:LineSegment
+                    End="-5.19999999999993,38.4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.19999999999993,38.4"
+                    Point2="-9.19999999999993,38.4"
+                    Point3="-9.19999999999993,42.4" />
+                  <mssgle:LineSegment
+                    End="-9.19999999999993,69.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\RPT_DISCOUNTED_PSF_UNITS\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\RPT_DISCOUNTED_BIG_HOUSES\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

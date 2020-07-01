@@ -1,2 +1,4 @@
 SgpRealEstateSecrets.yaml
 SG_REAL_ESTATE\*
+token.pickle
+*.json
